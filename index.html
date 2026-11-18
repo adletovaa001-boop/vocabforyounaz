@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My English · Grade 3</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+<style>
+/* ===== ОФОРМЛЕНИЕ: цвета — переменные, три режима: fun / calm / proj ===== */
+:root{--bg:#eefafa;--bg2:#fff4cc;--ink:#17323a;--card:#fff;--c:#0e7c86;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);font-size:18px}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0f2b31;--bg2:#1c2f3f;--ink:#eef9fa;--card:#173f48}}
+:root[data-theme=dark]{--bg:#0f2b31;--bg2:#1c2f3f;--ink:#eef9fa;--card:#173f48}
+:root[data-m=proj]{font-size:26px;--bg:#fff;--bg2:#fff;--ink:#000;--card:#fff;--c:#003f5c}
+body{margin:0;font-family:Nunito,system-ui,sans-serif;font-weight:600;color:var(--ink);background:linear-gradient(160deg,var(--bg),var(--bg2)) fixed;min-height:100vh}
+header{display:flex;gap:.5rem;justify-content:space-between;align-items:center;padding:.6rem;flex-wrap:wrap}
+main{max-width:44rem;margin:auto;padding:0 1rem 2rem}
+button{font:inherit;font-weight:800;cursor:pointer;border:0;border-radius:1.2rem;min-height:3.2rem;min-width:3.2rem;padding:.5rem 1.1rem;background:var(--c);color:#fff;transition:transform .2s}
+button:focus-visible,.card3d:focus-visible,input:focus-visible{outline:4px solid #7a3cff;outline-offset:2px}
+.seg{display:flex;gap:.3rem;flex-wrap:wrap}.seg button{background:var(--card);color:var(--ink);border:3px solid var(--c)}
+.seg .on{background:#ffd23f;color:#17323a;outline:3px solid #17323a}
+.big{font-size:1.2rem;width:100%;margin:.4rem 0}
+.tile{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:7rem;font-size:1.15rem;gap:.2rem}.tile i{font-style:normal;font-size:2.4rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:.8rem;margin:.8rem 0}
+.panel,.wc{background:var(--card);border-radius:1.5rem;padding:1rem 1.2rem;margin:.8rem 0;box-shadow:0 .2rem .8rem #0001;border-left:.6rem solid var(--c)}
+.wc{display:flex;gap:1rem;align-items:center}.wc h3{margin:0}.wc p{margin:.2rem 0}.wc small{font-weight:600}
+.pic{width:9rem;height:9rem;margin:auto;font-size:5rem;text-align:center}.pic.s{width:5rem;height:5rem;flex:none;font-size:3rem}.pic svg,.pic img{width:100%;height:100%;display:block;border-radius:50%;object-fit:cover;box-shadow:0 .2rem .6rem #0003}
+.say{display:flex;align-items:center;gap:.6rem;margin:.6rem 0}
+.bub{background:var(--card);border-radius:1.2rem;padding:.7rem 1rem;font-size:1.1rem;font-weight:800}
+.tag{background:#ffd23f;color:#17323a;border-radius:.6rem;padding:0 .4rem;font-size:.75rem;margin-right:.3rem}
+.sp{background:#7a3cff;min-height:2.6rem;padding:.2rem .8rem;margin:.2rem}
+.opt{background:var(--card);color:var(--ink);border:3px solid var(--c);font-size:1.3rem;min-height:4.5rem}
+.opt.yes{background:#d9f5df;color:#17323a;outline:4px solid #1b7f3b}
+.opt.no{background:#fde4e1;color:#17323a;outline:4px dashed #b3261e;animation:wob .4s}
+.row{display:flex;gap:.6rem}.row .big{flex:1}.row .yes{background:#1b7f3b}.row .no{background:#ffd23f;color:#17323a}
+.meta{text-align:right;font-weight:800}.chip{background:var(--card);color:var(--ink);border:3px solid var(--c);margin:.2rem;font-size:1.3rem;min-height:3.4rem}button:disabled:not(.yes){opacity:.5;cursor:default}.dr{touch-action:none;cursor:grab}.toast{position:fixed;left:50%;top:4rem;transform:translateX(-50%);background:#ffd23f;color:#17323a;padding:.7rem 1.2rem;border-radius:1rem;font-weight:800;z-index:9}td,th{padding:.3rem;text-align:left}
+@media print{header,.noprint,button{display:none!important}}
+.sky{display:flex;align-items:flex-end;justify-content:space-around;height:22rem;overflow:hidden;margin:.5rem 0}
+.bln{background:#ffd23f;color:#17323a;border:3px solid var(--ink);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;min-height:6rem;width:6.5rem;padding:.3rem;animation:up 7s linear infinite}.bln:nth-child(2n){background:#ffb3c1}.bln:nth-child(3n){background:#a8e6cf}
+.bln.yes{outline:4px solid #1b7f3b}.bln.no{outline:4px dashed #b3261e;opacity:.4}
+@keyframes up{0%{transform:translateY(0);opacity:0}10%,90%{opacity:1}100%{transform:translateY(-19rem);opacity:0}}
+input{width:100%;box-sizing:border-box;font:inherit;padding:.8rem 1rem;border-radius:1.2rem;border:3px solid var(--c);background:var(--card);color:var(--ink)}
+.card3d{perspective:1000px;height:18rem;margin:.8rem 0;cursor:pointer}
+.in{position:relative;height:100%;transform-style:preserve-3d;transition:transform .6s}.in.f{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--card);border:4px solid var(--c);border-radius:2rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1rem;box-sizing:border-box}
+.face h2{margin:.2rem}.back{transform:rotateY(180deg)}
+.bar{height:1.4rem;background:#0002;border-radius:1rem;overflow:hidden;margin:.3rem 0 .8rem;border:2px solid var(--ink)}.bar i{display:block;height:100%;background:#1b7f3b}
+.conf i{position:fixed;top:-2rem;font-style:normal;font-size:1.6rem;animation:fall 2.5s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:.2}}
+@keyframes wob{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+[data-m=fun] .wc:hover,[data-m=fun] .tile:hover{transform:translateY(-4px)}
+[data-m=calm] *,[data-a="0"] *{animation:none!important;transition:none!important}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<header id="hd"></header><main id="app"></main>
+<script>
+/* ===== ДАННЫЕ: слова и фразы. Чтобы добавить слово — скопируйте строку w(...) ===== */
+// колонки: английский, картинка (эмодзи), транскрипция, русский, казахский
+// «verified» = перевод проверен учителем (пока false — проверьте у носителей!)
+let TOPIC={ru:"Животные",en:"Animals",kk:"Жануарлар"};
+const W=[];
+const w=(en,e,ipa,ru,kk)=>W.push({en,e,ipa,ru,kk,topic:"animals",cefr:"A1",ctx:"",audio:"",img:"",/* img: своя картинка (data-URL), важнее рисунка */
+  ex:"This is "+(/^[aeiou]/.test(en)?"an ":"a ")+en+".",verified:{ru:false,kk:false}});
+w("cat","🐱","kæt","кошка","мысық");      w("dog","🐶","dɒɡ","собака","ит");
+w("bird","🐦","bɜːd","птица","құс");     w("fish","🐟","fɪʃ","рыба","балық");
+w("rabbit","🐰","ˈræbɪt","кролик","қоян"); w("horse","🐴","hɔːs","лошадь","жылқы");
+w("cow","🐮","kaʊ","корова","сиыр");      w("duck","🦆","dʌk","утка","үйрек");
+w("pig","🐷","pɪɡ","свинья","шошқа");     w("sheep","🐑","ʃiːp","овца","қой");
+w("chicken","🐔","ˈtʃɪkɪn","курица","тауық"); w("elephant","🐘","ˈelɪfənt","слон","піл");
+w("lion","🦁","ˈlaɪən","лев","арыстан");   w("monkey","🐵","ˈmʌŋki","обезьяна","маймыл");
+w("bear","🐻","beə","медведь","аю");      w("frog","🐸","frɒɡ","лягушка","бақа");
+const P=[ // фразы: английский, русский, казахский
+ {en:"This is a cat.",ru:"Это кошка.",kk:"Бұл мысық."},
+ {en:"I like dogs.",ru:"Мне нравятся собаки.",kk:"Маған иттер ұнайды."},
+ {en:"Do you like dogs?",ru:"Тебе нравятся собаки?",kk:"Саған иттер ұнай ма?"},
+ {en:"Yes, I do.",ru:"Да, нравятся.",kk:"Иә, ұнайды."},
+ {en:"No, I don’t.",ru:"Нет, не нравятся.",kk:"Жоқ, ұнамайды."},
+ {en:"I can see a lion.",ru:"Я вижу льва.",kk:"Мен арыстанды көремін."}];
+// к каждой фразе: слово для картинки и слово, которое пропускаем в задании «Вставь слово»
+[["cat","cat"],["dog","dogs"],["dog","like"],["dog","do"],["dog","don’t"],["lion","lion"]].forEach(([w,g],i)=>{P[i].w=w;P[i].gap=g});
+const DLG=[ // мини-диалог: b = друг (медведь), c = ребёнок выбирает реплику; o = неверные варианты
+ {w:"b",en:"Hello! Do you like dogs?",ru:"Привет! Тебе нравятся собаки?",kk:"Сәлем! Саған иттер ұнай ма?"},
+ {w:"c",en:"Yes, I do.",ru:"Да, нравятся.",kk:"Иә, ұнайды.",o:["This is a cat.","I can see a lion."]},
+ {w:"b",en:"Me too! Look, a lion!",ru:"Мне тоже! Смотри, лев!",kk:"Маған да! Қара, арыстан!"},
+ {w:"c",en:"I can see a lion.",ru:"Я вижу льва.",kk:"Мен арыстанды көремін.",o:["No, I don’t.","Do you like dogs?"]}];
+
+/* ===== ПЕРЕВОДЫ интерфейса: EN / RU / KK ===== */
+const translations={
+en:{title:"Animal Friends",home:"Home",hi:"Hi! I’m Foxy! Let’s meet the animals!",goals:"My goals",g1:"I will learn {n} words about animals",g2:"I can say: This is a cat",g3:"I can ask: Do you like dogs?",dict:"Words",cards:"Cards",test:"Quiz",prog:"My progress",search:"Search…",know:"I know it",again:"Repeat",pre:"Let’s see what you already know. No marks, just fun!",fin:"Final quiz: show what you have learned!",start:"Start",flip:"Tap the card",ok:"Great!",no:"Nice try!",done:"Well done!",thx:"Thank you! Now let’s learn the words.",before:"Before the topic",after:"After the topic",res:"Words I know: {a} of {b}",lrn:"Learned in cards",phr:"Phrases",set:"Settings",mode:"Style",fun:"Fun",calm:"Calm",proj:"Projector",hint:"Hints in",both:"Both",acc:"English voice",snd:"Sound",anim:"Animations",m1:"English → translation",m2:"Picture → word",m3:"Listen → choose",none:"No cards to repeat today!",sents:"Sentences",tasks:"Tasks",build:"Build the sentence",gap:"Fill the gap",dlg:"Talk to a friend",rep:"Choose your reply",check:"Check",retry:"Repeat mistakes",mist:"Words to repeat",sc:"Correct: {a} of {b}",t1:"Pick the word by the picture",s1:"Skill: recognition",t2:"Match word and picture",s2:"Skill: recognition and connection",t3:"Write the word",s3:"Skill: writing",t4:"Listen and choose",s4:"Skill: listening",t5:"Build the word from letters",s5:"Skill: spelling",games:"Games",dif:"Level",ez:"Easy",md:"Medium",hd:"Hard",nw:"Words",tm:"Timer",go:"Play!",g1:"Memory match",g2:"Pop the balloons",g3:"Feed the monster",g4:"Sort on shelves",g5:"Team game",o1:"Goal: memory",o2:"Goal: listening",o3:"Goal: understanding phrases",o4:"Goal: classification",o5:"Goal: teamwork",r1:"Flip two cards. Find a word and its picture!",r2:"Listen and pop the right balloon!",r3:"The monster is hungry. Give it what it asks for!",r4:"Put each animal on the right shelf!",r5:"Teams answer in turn. The teacher presses ✓ or ✗.",farm:"Farm",wild:"Wild",pet:"Pets",teams:"Teams",yes:"✓ Correct",nope:"✗ Not yet",rev:"Show the word",all:"Everyone is a winner!",pts:"points",again2:"Play again",lv1:"Beginner",lv2:"Explorer",lv3:"Traveler",lv4:"Champion",bd:"Badges",b1:"First word",b2:"10 words learned",b3:"Fixed all mistakes",b4:"Topic finished",b5:"5 days of practice",stk:"Day streak",dys:"days",rec:"My record (best day)",wk:"This week vs last week",cert:"Certificate",prn:"Print",nm:"Name or nickname (no surname)",add:"Add",pt:"My English · Grade 3",hi2:"Choose a unit!",hi3:"Hi! Let’s learn new words!",gu1:"I will learn {n} new words",gu2:"I can say: {s}",soon:"Coming soon"},
+ru:{title:"Друзья-животные",home:"Домой",hi:"Привет! Я Фокси! Давай знакомиться с животными!",goals:"Мои цели",g1:"Я узнаю {n} слов о животных",g2:"Я могу сказать: This is a cat",g3:"Я могу спросить: Do you like dogs?",dict:"Слова",cards:"Карточки",test:"Тест",prog:"Мой прогресс",search:"Поиск…",know:"Знаю",again:"Ещё повторить",pre:"Проверим, что ты уже знаешь. Без оценок, просто интересно!",fin:"Итоговый тест: покажи, что ты выучил!",start:"Начать",flip:"Нажми на карточку",ok:"Молодец!",no:"Ничего, получится!",done:"Отлично!",thx:"Спасибо! Теперь учим слова.",before:"До темы",after:"После темы",res:"Знаю слов: {a} из {b}",lrn:"Выучено в карточках",phr:"Фразы",set:"Настройки",mode:"Оформление",fun:"Весёлый",calm:"Спокойный",proj:"Проектор",hint:"Подсказки",both:"Оба",acc:"Английский голос",snd:"Звук",anim:"Анимации",m1:"Английский → перевод",m2:"Картинка → слово",m3:"Слушай → выбирай",none:"Сегодня повторять нечего!",sents:"Предложения",tasks:"Задания",build:"Собери предложение",gap:"Вставь слово",dlg:"Поговори с другом",rep:"Выбери ответ",check:"Проверить",retry:"Повторить ошибки",mist:"Слова для повторения",sc:"Правильно: {a} из {b}",t1:"Выбери слово по картинке",s1:"Навык: узнавание",t2:"Соедини слово и картинку",s2:"Навык: узнавание и связь",t3:"Напиши слово по картинке",s3:"Навык: письмо",t4:"Слушай и выбирай",s4:"Навык: аудирование",t5:"Собери слово из букв",s5:"Навык: орфография",games:"Игры",dif:"Сложность",ez:"Лёгкий",md:"Средний",hd:"Сложный",nw:"Слов",tm:"Таймер",go:"Играть!",g1:"Найди пару",g2:"Лопни шарики",g3:"Накорми монстрика",g4:"Разложи по полкам",g5:"Командная игра",o1:"Цель: запоминание",o2:"Цель: аудирование",o3:"Цель: понимание фраз",o4:"Цель: классификация",o5:"Цель: работа в команде",r1:"Открой две карточки. Найди слово и его картинку!",r2:"Слушай и лопни нужный шарик!",r3:"Монстрик голоден. Дай ему то, что он просит!",r4:"Положи каждое животное на свою полку!",r5:"Команды отвечают по очереди. Учитель нажимает ✓ или ✗.",farm:"Ферма",wild:"Дикие",pet:"Домашние",teams:"Команды",yes:"✓ Верно",nope:"✗ Пока нет",rev:"Показать слово",all:"Все молодцы!",pts:"очков",again2:"Играть ещё",lv1:"Новичок",lv2:"Исследователь",lv3:"Путешественник",lv4:"Чемпион",bd:"Значки",b1:"Первое слово",b2:"10 слов выучено",b3:"Исправил все ошибки",b4:"Закончил тему",b5:"5 дней занятий",stk:"Дней подряд",dys:"дн.",rec:"Мой рекорд (лучший день)",wk:"Эта неделя и прошлая",cert:"Грамота",prn:"Печать",nm:"Имя или ник (без фамилии)",add:"Добавить",pt:"Мой английский · 3 класс",hi2:"Выбери тему!",hi3:"Привет! Давай учить новые слова!",gu1:"Я выучу {n} новых слов",gu2:"Я могу сказать: {s}",soon:"Скоро"},
+kk:{title:"Жануар достар",home:"Басты бет",hi:"Сәлем! Мен Фокси! Жануарлармен танысайық!",goals:"Мақсаттарым",g1:"Мен жануарлар туралы {n} сөз үйренемін",g2:"Мен айта аламын: This is a cat",g3:"Мен сұрай аламын: Do you like dogs?",dict:"Сөздер",cards:"Карточкалар",test:"Тест",prog:"Менің жетістігім",search:"Іздеу…",know:"Білемін",again:"Қайталаймын",pre:"Не білетініңді тексерейік. Баға жоқ, тек қызық!",fin:"Қорытынды тест: не үйренгеніңді көрсет!",start:"Бастау",flip:"Карточканы бас",ok:"Жарайсың!",no:"Ештеңе етпейді!",done:"Тамаша!",thx:"Рақмет! Енді сөздерді үйренеміз.",before:"Тақырыпқа дейін",after:"Тақырыптан кейін",res:"Білетін сөздер: {a} / {b}",lrn:"Карточкада үйренілді",phr:"Сөз тіркестері",set:"Баптаулар",mode:"Көрініс",fun:"Көңілді",calm:"Тыныш",proj:"Проектор",hint:"Көмек тілі",both:"Екеуі де",acc:"Ағылшын дауысы",snd:"Дыбыс",anim:"Анимация",m1:"Ағылшын → аударма",m2:"Сурет → сөз",m3:"Тыңда → таңда",none:"Бүгін қайталайтын сөз жоқ!",sents:"Сөйлемдер",tasks:"Тапсырмалар",build:"Сөйлемді құра",gap:"Сөзді қой",dlg:"Досыңмен сөйлес",rep:"Жауабыңды таңда",check:"Тексеру",retry:"Қателерді қайталау",mist:"Қайталайтын сөздер",sc:"Дұрыс: {a} / {b}",t1:"Сурет бойынша сөзді таңда",s1:"Дағды: тану",t2:"Сөз бен суретті қос",s2:"Дағды: тану және байланыс",t3:"Суретке сөз жаз",s3:"Дағды: жазу",t4:"Тыңда да таңда",s4:"Дағды: тыңдап түсіну",t5:"Әріптерден сөз құра",s5:"Дағды: емле",games:"Ойындар",dif:"Деңгей",ez:"Оңай",md:"Орташа",hd:"Қиын",nw:"Сөз саны",tm:"Таймер",go:"Ойнау!",g1:"Жұбын тап",g2:"Шарларды жар",g3:"Құбыжықты тамақтандыр",g4:"Сөреге қой",g5:"Командалық ойын",o1:"Мақсат: есте сақтау",o2:"Мақсат: тыңдау",o3:"Мақсат: сөз тіркестерін түсіну",o4:"Мақсат: топтау",o5:"Мақсат: бірге ойнау",r1:"Екі карточканы аш. Сөз бен суретті тап!",r2:"Тыңда да дұрыс шарды жар!",r3:"Құбыжық аш. Не сұраса, соны бер!",r4:"Әр жануарды өз сөресіне қой!",r5:"Командалар кезекпен жауап береді. Мұғалім ✓ немесе ✗ басады.",farm:"Ферма",wild:"Жабайы",pet:"Үй жануарлары",teams:"Командалар",yes:"✓ Дұрыс",nope:"✗ Әзірше жоқ",rev:"Сөзді көрсету",all:"Бәрі жеңімпаз!",pts:"ұпай",again2:"Қайта ойнау",lv1:"Жаңадан бастаушы",lv2:"Зерттеуші",lv3:"Саяхатшы",lv4:"Чемпион",bd:"Белгішелер",b1:"Алғашқы сөз",b2:"10 сөз үйренілді",b3:"Барлық қатені түзетті",b4:"Тақырыпты аяқтады",b5:"5 күн жаттығу",stk:"Қатарынан күн",dys:"күн",rec:"Менің рекордым (үздік күн)",wk:"Осы апта және өткен апта",cert:"Грамота",prn:"Басып шығару",nm:"Аты немесе лақап аты (тегінсіз)",add:"Қосу",pt:"Менің ағылшын тілім · 3-сынып",hi2:"Тақырыпты таңда!",hi3:"Сәлем! Жаңа сөздерді үйренейік!",gu1:"Мен {n} жаңа сөз үйренемін",gu2:"Мен айта аламын: {s}",soon:"Жақында"}};
+const t=k=>(translations[S.lang]||{})[k]||translations.en[k]||k;
+
+/* ===== НАСТРОЙКИ и ХРАНИЛИЩЕ (localStorage; без него сайт тоже работает) ===== */
+let S={lang:"ru",mode:"fun",hint:"both",acc:"en-GB",snd:"1",anim:"1",box:{},stars:{},xp:0,bad:[],dx:{},U:{},unit:"animals",pre:null,post:null};
+const KEY="animalFriends_v1";
+function load(){try{const d=JSON.parse(localStorage.getItem(KEY)||"{}");Object.assign(S,d.S||d);if(d.PR)PR=d.PR;Object.assign(CFG,d.CFG||{});PR.list[PR.id]=PR.list[PR.id]||{name:"Друг",av:"🦊"};const w=JSON.parse(localStorage.getItem(KEY+"_w")||"null");if(w){const o=Array.isArray(w)?{animals:w}:w;for(const k in o)if(U[k]&&o[k])U[k].words=o[k]}}catch(e){}}
+function save(){try{chkB();S.U[S.unit]={pre:S.pre,post:S.post,stars:S.stars};Object.assign(PR.list[PR.id],Object.fromEntries(PF.map(k=>[k,S[k]])));const s=JSON.stringify({S,PR,CFG});localStorage.setItem(KEY,s);if(s.length>4e6)toast("⚠ Хранилище почти заполнено. Сохраните прогресс в файл (💾)")}catch(e){}}
+function saveW(){try{U[S.unit].words=W.slice();localStorage.setItem(KEY+"_w",JSON.stringify(Object.fromEntries(Object.entries(U).map(([k,v])=>[k,v.words]))))}catch(e){toast("⚠ Нет места в хранилище")}}
+const apply=()=>{const d=document.documentElement;d.dataset.m=S.mode;d.dataset.a=S.anim;d.lang=S.lang};
+
+/* ===== ОЗВУЧКА: свой аудиофайл (поле audio) важнее синтеза речи ===== */
+const voices=()=>{try{return speechSynthesis.getVoices()}catch(e){return[]}};
+const canSay=l=>voices().some(v=>v.lang.toLowerCase().startsWith(l.slice(0,2)));
+function utter(txt,lang){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang=lang;u.rate=.85;speechSynthesis.speak(u)}catch(e){}}
+function say(i,l){const x=W[i];if(l=="en"&&x.audio){try{new Audio(x.audio).play()}catch(e){}return}
+  utter(x[l],{en:S.acc,ru:"ru-RU",kk:"kk-KZ"}[l])}
+const sayP=i=>utter(P[i].en,S.acc);
+// кнопки озвучки; если голоса нет — кнопка скрыта
+const spk=x=>["en","ru","kk"].filter(l=>(l=="en"||S.hint=="both"||S.hint==l)&&((l=="en"&&x.audio)||canSay(l)))
+  .map(l=>`<button class="sp" onclick="say(${W.indexOf(x)},'${l}')" aria-label="Audio ${l}">🔊${l=="en"?"":l=="ru"?" РУС":" ҚАЗ"}</button>`).join("");
+let AC;const addX=n=>{S.xp+=n;S.dx[today()]=(S.dx[today()]||0)+n};const beep=ok=>{if(ok)addX(2);if(S.snd!="1"||S.mode!="fun")return;try{AC=AC||new AudioContext();const o=AC.createOscillator(),g=AC.createGain();o.frequency.value=ok?660:300;g.gain.value=.05;o.connect(g);g.connect(AC.destination);o.start();o.stop(AC.currentTime+.15)}catch(e){}};
+
+/* ===== КАРТИНКИ: единый стиль, рисунки SVG. Нет рисунка в ART — показывается эмодзи ===== */
+const HEAD=(c,rx=30,ry=28,cy=56)=>`<ellipse cx="50" cy="${cy}" rx="${rx}" ry="${ry}" fill="${c}" stroke="#0002" stroke-width="1.5"/>`;
+const EYES=(x=36,y=48,d=28,r=5)=>`<circle cx="${x}" cy="${y}" r="${r}" fill="#222"/><circle cx="${x+d}" cy="${y}" r="${r}" fill="#222"/><circle cx="${x+1.6}" cy="${y-1.6}" r="1.7" fill="#fff"/><circle cx="${x+d+1.6}" cy="${y-1.6}" r="1.7" fill="#fff"/>`;
+const MO=(y=0)=>`<path transform="translate(0 ${y})" d="M50 67v3M44 72q6 4 6-2q0 6 6 2" stroke="#222" stroke-width="1.8" fill="none" stroke-linecap="round"/>`;
+const ART={ // слово: [цвет фона, рисунок]
+cat:["#ffe5c4",`<path d="M20 40L22 10L46 28zM80 40L78 10L54 28z" fill="#f28c38"/>${HEAD("#f28c38",32)}<path d="M50 30v9M42 32l2 8M58 32l-2 8" stroke="#c46a1c" stroke-width="3" stroke-linecap="round"/><ellipse cx="50" cy="68" rx="12" ry="8" fill="#fff"/><path d="M46 62h8l-4 5z" fill="#e0527a"/>${MO()}<path d="M8 58h20M10 68l18-4M92 58H72M90 68l-18-4" stroke="#555" stroke-width="1.6"/>${EYES(36,52)}`],
+dog:["#dff0ff",`<ellipse cx="22" cy="50" rx="12" ry="22" fill="#8a5a33" transform="rotate(15 22 50)"/><ellipse cx="78" cy="50" rx="12" ry="22" fill="#8a5a33" transform="rotate(-15 78 50)"/>${HEAD("#d9a066")}<ellipse cx="50" cy="68" rx="15" ry="11" fill="#f6dcb8"/><ellipse cx="50" cy="62" rx="6" ry="4.5" fill="#222"/><path d="M46 73q4 10 8 0z" fill="#ff6f8e"/>${MO()}${EYES(36,46)}`],
+bird:["#e4f6e0",`<ellipse cx="22" cy="60" rx="8" ry="14" fill="#2f7fc0"/><ellipse cx="78" cy="60" rx="8" ry="14" fill="#2f7fc0"/><path d="M50 12q-10 8-5 18q8-4 5-18z" fill="#2f7fc0"/><circle cx="50" cy="54" r="30" fill="#4aa3e8"/><ellipse cx="50" cy="68" rx="18" ry="14" fill="#e6f4ff"/><path d="M42 52h16l-8 12z" fill="#ffb11f"/>${EYES(36,42)}`],
+fish:["#cfeeff",`<path d="M74 50L94 32V68z" fill="#ff7a45"/><ellipse cx="46" cy="50" rx="32" ry="22" fill="#ff9a5c" stroke="#0002" stroke-width="1.5"/><path d="M40 29q10-12 20 0z" fill="#ff7a45"/><path d="M54 34q8 16 0 32" stroke="#fff" stroke-width="4" fill="none"/><circle cx="30" cy="45" r="5" fill="#222"/><circle cx="31.6" cy="43.4" r="1.7" fill="#fff"/><path d="M18 57q5 4 9 1" stroke="#222" stroke-width="2" fill="none"/><circle cx="14" cy="28" r="3" fill="none" stroke="#4aa3e8" stroke-width="1.5"/><circle cx="22" cy="18" r="2" fill="none" stroke="#4aa3e8" stroke-width="1.5"/>`],
+rabbit:["#e4f6e0",`<ellipse cx="38" cy="26" rx="8" ry="22" fill="#f2eef7" stroke="#0002"/><ellipse cx="62" cy="26" rx="8" ry="22" fill="#f2eef7" stroke="#0002"/><ellipse cx="38" cy="28" rx="4" ry="15" fill="#ffb3c8"/><ellipse cx="62" cy="28" rx="4" ry="15" fill="#ffb3c8"/>${HEAD("#f2eef7",29,25,62)}<circle cx="28" cy="68" r="5" fill="#ffc2d4"/><circle cx="72" cy="68" r="5" fill="#ffc2d4"/><ellipse cx="50" cy="66" rx="4" ry="3" fill="#e0527a"/>${MO(2)}${EYES(37,58,26)}`],
+horse:["#fff0c9",`<path d="M34 28L32 8l14 14zM66 28L68 8L54 22z" fill="#a0642f"/>${HEAD("#b9733a",22,34)}<path d="M46 28h8l-2 30h-4z" fill="#fff"/><path d="M36 24q14-10 28 0q-4 14-14 14q-10 0-14-14z" fill="#4b2e1a"/><ellipse cx="50" cy="78" rx="16" ry="13" fill="#e8b98a"/><circle cx="44" cy="78" r="2.5" fill="#222"/><circle cx="56" cy="78" r="2.5" fill="#222"/>${EYES(36,50)}`],
+cow:["#e3f2d1",`<path d="M24 30q-10-14-4-20q10 2 14 16zM76 30q10-14 4-20q-10 2-14 16z" fill="#f5e6c8" stroke="#c9b48a"/><ellipse cx="16" cy="46" rx="12" ry="7" fill="#333" transform="rotate(-20 16 46)"/><ellipse cx="84" cy="46" rx="12" ry="7" fill="#333" transform="rotate(20 84 46)"/>${HEAD("#fff",28,30,52)}<path d="M56 26q16 0 18 16q-12 6-22-4z" fill="#333"/><ellipse cx="50" cy="72" rx="18" ry="12" fill="#ffb8c6"/><ellipse cx="43" cy="72" rx="2.5" ry="3.5" fill="#c05a74"/><ellipse cx="57" cy="72" rx="2.5" ry="3.5" fill="#c05a74"/>${EYES(37,50,26)}`],
+duck:["#d9eefc",`<circle cx="50" cy="50" r="32" fill="#ffd93b" stroke="#0002" stroke-width="1.5"/><path d="M44 20q6-10 12 0z" fill="#ffd93b"/><ellipse cx="50" cy="66" rx="18" ry="9" fill="#ff8a1f"/><path d="M34 66h32" stroke="#c75e00" stroke-width="2"/>${EYES(36,46)}`],
+pig:["#e2f0ff",`<path d="M22 40L24 14L44 28zM78 40L76 14L56 28z" fill="#f78fb3"/>${HEAD("#ffa6c4",32)}<ellipse cx="50" cy="66" rx="14" ry="10" fill="#ff7fa8"/><ellipse cx="45" cy="66" rx="2.5" ry="4" fill="#8a2c4d"/><ellipse cx="55" cy="66" rx="2.5" ry="4" fill="#8a2c4d"/>${EYES(36,46)}`],
+sheep:["#e0f0ff",`<g fill="#fff" stroke="#0002" stroke-width="1.5"><circle cx="30" cy="38" r="14"/><circle cx="50" cy="28" r="15"/><circle cx="70" cy="38" r="14"/><circle cx="24" cy="60" r="13"/><circle cx="76" cy="60" r="13"/></g><ellipse cx="24" cy="54" rx="9" ry="5" fill="#f3d9b8" transform="rotate(25 24 54)"/><ellipse cx="76" cy="54" rx="9" ry="5" fill="#f3d9b8" transform="rotate(-25 76 54)"/>${HEAD("#f3d9b8",20,24,58)}<circle cx="50" cy="38" r="13" fill="#fff"/><ellipse cx="50" cy="68" rx="4" ry="3" fill="#c98f7a"/>${EYES(41,56,18,4)}`],
+chicken:["#dbeeff",`<path d="M38 30q-6-14 6-12q2-10 10-2q10-4 6 14z" fill="#e63946"/><circle cx="50" cy="54" r="30" fill="#fff" stroke="#0002" stroke-width="1.5"/><path d="M46 64q4 16 8 0z" fill="#e63946"/><path d="M42 54h16l-8 12z" fill="#ffb11f"/>${EYES(36,44)}`],
+elephant:["#fff1d6",`<circle cx="20" cy="50" r="20" fill="#9fb1c7"/><circle cx="80" cy="50" r="20" fill="#9fb1c7"/><circle cx="20" cy="50" r="12" fill="#f0b7c4"/><circle cx="80" cy="50" r="12" fill="#f0b7c4"/>${HEAD("#b4c4d8",28,30,48)}<path d="M50 58v22q0 10-8 10" stroke="#b4c4d8" stroke-width="14" stroke-linecap="round" fill="none"/>${EYES(36,44)}`],
+lion:["#fff3c4",`<circle cx="50" cy="52" r="42" fill="#c2681c"/><circle cx="24" cy="24" r="8" fill="#f5b44a"/><circle cx="76" cy="24" r="8" fill="#f5b44a"/><circle cx="50" cy="54" r="27" fill="#f5b44a"/><ellipse cx="50" cy="66" rx="13" ry="9" fill="#fff0d0"/><path d="M45 60h10l-5 6z" fill="#6b3a1a"/>${MO()}${EYES(38,50,24)}`],
+monkey:["#e3f4d4",`<circle cx="18" cy="52" r="12" fill="#8a5a33"/><circle cx="82" cy="52" r="12" fill="#8a5a33"/><circle cx="18" cy="52" r="7" fill="#f3c9a0"/><circle cx="82" cy="52" r="7" fill="#f3c9a0"/><circle cx="50" cy="50" r="32" fill="#8a5a33"/><ellipse cx="50" cy="60" rx="22" ry="20" fill="#f3c9a0"/><circle cx="40" cy="46" r="11" fill="#f3c9a0"/><circle cx="60" cy="46" r="11" fill="#f3c9a0"/><circle cx="46" cy="62" r="1.6" fill="#6b3a1a"/><circle cx="54" cy="62" r="1.6" fill="#6b3a1a"/><path d="M40 69q10 8 20 0" stroke="#6b3a1a" stroke-width="2.4" fill="none" stroke-linecap="round"/>${EYES(40,46,20,4.5)}`],
+bear:["#e6f1ff",`<circle cx="24" cy="26" r="11" fill="#a8703d"/><circle cx="76" cy="26" r="11" fill="#a8703d"/><circle cx="24" cy="26" r="6" fill="#e8c39a"/><circle cx="76" cy="26" r="6" fill="#e8c39a"/><circle cx="50" cy="54" r="32" fill="#a8703d" stroke="#0002" stroke-width="1.5"/><ellipse cx="50" cy="66" rx="14" ry="11" fill="#e8c39a"/><ellipse cx="50" cy="61" rx="5.5" ry="4" fill="#222"/>${MO(1)}${EYES(36,46)}`],
+frog:["#e8f7ff",`<ellipse cx="50" cy="62" rx="38" ry="26" fill="#58b947" stroke="#0002" stroke-width="1.5"/><circle cx="32" cy="34" r="14" fill="#58b947"/><circle cx="68" cy="34" r="14" fill="#58b947"/><circle cx="32" cy="34" r="9" fill="#fff"/><circle cx="68" cy="34" r="9" fill="#fff"/><circle cx="33" cy="35" r="5" fill="#222"/><circle cx="67" cy="35" r="5" fill="#222"/><path d="M26 66q24 20 48 0" stroke="#1f5f1a" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="22" cy="66" r="5" fill="#ff9aa8"/><circle cx="78" cy="66" r="5" fill="#ff9aa8"/>`]};
+// картинка слова: своя (img) → рисунок SVG → эмодзи; c="s" — маленький размер
+const pic=(x,c="")=>x.img?`<div class="pic ${c}"><img src="${x.img}" alt="${x.en}"></div>`:ART[x.en]?`<div class="pic ${c}" role="img" aria-label="${x.en}"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="${ART[x.en][0]}"/>${ART[x.en][1]}</svg></div>`:`<div class="pic ${c}" role="img" aria-label="${x.en}"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="${(U[S.unit]||{}).bg||"#e0f7fa"}"/><text x="50" y="52" font-size="${x.e.length>2?38:56}" text-anchor="middle" dominant-baseline="central">${x.e}</text></svg></div>`;
+
+/* ===== РАЗДЕЛЫ ===== */
+const $=s=>document.querySelector(s),app=$("#app"),paint=h=>app.innerHTML=h;
+const sh=a=>a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(x=>x[1]);
+const today=()=>Math.floor(Date.now()/864e5);
+let cur=null;const show=f=>{clearInterval(TI);if(!/^(t|goT$)/.test(f.name))TOK=0;apply();cur=f;f();scrollTo(0,0)};
+// маскот Фокси (SVG)
+const fox=()=>`<svg viewBox="0 0 100 100" width="84" height="84" aria-hidden="true"><path d="M14 10l24 20H14zM86 10L62 30h24z" fill="#c2410c"/><circle cx="50" cy="55" r="36" fill="#ff8a3d"/><path d="M20 58q30 42 60 0q-30 12-60 0z" fill="#fff"/><circle cx="37" cy="48" r="5" fill="#17323a"/><circle cx="63" cy="48" r="5" fill="#17323a"/><ellipse cx="50" cy="62" rx="6" ry="4.5" fill="#17323a"/><path d="M39 72q11 9 22 0" stroke="#17323a" stroke-width="3" fill="none"/></svg>`;
+const say2=x=>`<div class="say">${fox()}<div class="bub" role="status" id="bub">${x}</div></div>`;
+const homeBtn=()=>`<button class="big" onclick="show(goUnit)">🏠 ${t("home")}</button>`;
+function hdr(){$("#hd").innerHTML=`<button onclick="show(goHome)" aria-label="${t("home")}">🏠 ${t("home")}</button>
+ <div class="seg" role="group" aria-label="Language">${[["en","EN"],["ru","РУС"],["kk","ҚАЗ"]].map(([l,n])=>`<button class="${S.lang==l?"on":""}" aria-pressed="${S.lang==l}" onclick="setL('${l}')">${n}</button>`).join("")}</div>
+ <button onclick="show(goMe)" aria-label="${t("nm")}">${PR.list[PR.id].av}</button><button onclick="show(goSet)" aria-label="${t("set")}">⚙️</button>`}
+function setL(l){S.lang=l;save();apply();hdr();if(cur)cur()}
+const hints=x=>["ru","kk"].filter(l=>S.hint=="both"||S.hint==l).map(l=>`<div><span class="tag">${l=="ru"?"РУС":"ҚАЗ"}</span>${x[l]}</div>`).join("");
+function confetti(){if(S.mode!="fun"||S.anim!="1"||matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+ const c=document.createElement("div");c.className="conf";c.setAttribute("aria-hidden","true");const E=["🎉","⭐","🎈","✨"];
+ c.innerHTML=Array.from({length:24},(_,i)=>`<i style="left:${Math.random()*95}%;animation-delay:${Math.random()}s">${E[i%4]}</i>`).join("");
+ document.body.appendChild(c);setTimeout(()=>c.remove(),3800)}
+
+function goUnit(){const tl=[["dict","🖼️","#0e7c86"],["cards","🃏","#7a3cff"],["sents","💬","#c2410c"],["games","🎮","#237a37"]];
+ paint(`<h1>${U[S.unit].e} ${TOPIC[S.lang]}</h1>${say2(t(S.unit=="animals"?"hi":"hi3"))}
+ <div class="panel"><h2>🎯 ${t("goals")}</h2><p>🧠 ${t("gu1").replace("{n}",W.length)}</p>${P.slice(0,2).map(p=>`<p>🗣️ ${t("gu2").replace("{s}",p.en)}</p>`).join("")}</div>
+ <div class="grid">${tl.map(([k,i,c])=>`<button class="tile" style="background:${c}" onclick="show(go${k[0].toUpperCase()+k.slice(1)})"><i>${i}</i>${t(k)}</button>`).join("")}</div><div class="row" style="flex-wrap:wrap">${CFG.daily=="1"?`<button class="big" onclick="runTask(1,pickW(5))" aria-label="Daily">☀️ 5</button>`:""}<button class="big" onclick="show(goTasks)">🎯 ${t("tasks")}</button><button class="big" onclick="show(goTest)">📝 ${t("test")}</button><button class="big" onclick="show(goProg)">📈 ${t("prog")}</button></div>`)}
+
+// Раздел 1. Визуальный словарь
+const card=x=>`<div class="wc">${pic(x,"s")}<div style="flex:1"><h3>${x.en} ${x.ipa?"<small>/"+x.ipa+"/</small>":""}</h3>${hints(x)}<p>${x.ex}</p>${x.ctx?`<p>${x.ctx}</p>`:""}</div><div>${spk(x)}</div></div>`;
+function goDict(){paint(`<input id="q" type="search" placeholder="🔍 ${t("search")}" aria-label="${t("search")}" oninput="dl()"><div id="dl"></div>
+ <h2>💬 ${t("phr")}</h2>${P.map((p,i)=>`<div class="wc"><div style="flex:1"><h3>${p.en}</h3>${hints(p)}</div>${canSay(S.acc)?`<button class="sp" onclick="sayP(${i})" aria-label="Audio">🔊</button>`:""}</div>`).join("")}`);dl()}
+function dl(){const q=$("#q").value.toLowerCase();$("#dl").innerHTML=W.filter(x=>(x.en+x.ru+x.kk).toLowerCase().includes(q)).map(card).join("")}
+
+// Раздел 2. Флешкарты (система Лейтнера: коробки 1-5, повтор через 0/1/3/7/14 дней)
+let fc;const GAP=[0,1,3,7,14];
+const due=()=>sh(W.filter(x=>!S.box[x.en]||S.box[x.en].d<=today())).slice(0,10);
+function goCards(){paint(`${say2(t("cards"))}${["🔤","🖼️","🔊"].map((i,n)=>`<button class="big" onclick="startFc(${n})">${i} ${t("m"+(n+1))}</button>`).join("")}`)}
+function startFc(m){const q=due();if(!q.length)return paint(say2(t("none"))+homeBtn());
+ if(m==2)return quiz("hear",q,fin("hear"));fc={m,q,i:0,f:0};cur=fcShow;fcShow()}
+function fcShow(){if(fc.i>=fc.q.length){confetti();return paint(say2(t("done"))+homeBtn())}
+ const x=fc.q[fc.i];
+ paint(`<div class="meta">${fc.i+1}/${fc.q.length}</div>
+ <div class="card3d" tabindex="0" role="button" aria-label="${t("flip")}" onclick="flipC()" onkeydown="if(event.key=='Enter'||event.key==' '){event.preventDefault();flipC()}">
+ <div class="in" id="in"><div class="face">${pic(x)}${fc.m==0?`<h2>${x.en}</h2>`:""}<small>${t("flip")}</small></div>
+ <div class="face back">${fc.m==1?`<h2>${x.en}</h2>`:""}${x.ipa?"<small>/"+x.ipa+"/</small>":""}${hints(x)}<p>${x.ex}</p></div></div></div>
+ <div style="text-align:center">${spk(x)}</div>
+ <div class="row"><button class="big no" onclick="rate(0)">↻ ${t("again")}</button><button class="big yes" onclick="rate(1)">✓ ${t("know")}</button></div>`)}
+function flipC(){$("#in").classList.toggle("f")}
+function rate(g){const x=fc.q[fc.i],b=S.box[x.en]||{b:1};b.b=g?Math.min(5,b.b+1):1;b.d=today()+(g?GAP[b.b-1]:0);S.box[x.en]=b;save();beep(g);fc.i++;fcShow()}
+
+// Тесты: входной (без оценок) и итоговый; тот же движок — для режима «слушай → выбирай»
+function quiz(kind,ws,after){
+ const can=x=>x.audio||canSay("en");
+ const Q=sh(ws).map((x,i)=>({x,hear:(kind=="hear"||(kind!="pic"&&i%2))&&can(x),o:0}));
+ let i=0,k=0,miss=[],lock=0;cur=null;AD={n:4,w:0,r:0,h:0};
+ const step=()=>{if(i>=Q.length)return after(k,Q.length,miss);const q=Q[i];q.o=opts(q.x);lock=0;
+  paint(`<div class="meta">${i+1}/${Q.length}</div>${q.hear?`<button class="big" onclick="say(${W.indexOf(q.x)},'en')" aria-label="Audio">🔊</button>`:`${pic(q.x)}`}
+  <div class="grid">${q.o.map((o,j)=>`<button class="opt" id="o${j}" onclick="pk(${j})">${q.hear?`${pic(o,"s")}`:o.en}</button>`).join("")}</div>${say2(kind=="pre"?"🙂":AD.h&&!q.hear?"💡 "+q.x.en[0]+"…":"👆")}`);
+  if(q.hear&&S.snd=="1")say(W.indexOf(q.x),"en")};
+ window.pk=j=>{if(lock)return;lock=1;const q=Q[i],good=q.o[j]==q.x;
+  if(kind!="pre"){const mark=(n,c,s)=>{const b=$("#o"+n);b.classList.add(c);b.insertAdjacentHTML("afterbegin",s)};
+   mark(j,good?"yes":"no",good?"✓ ":"✗ ");if(!good)mark(q.o.indexOf(q.x),"yes","✓ ");$("#bub").textContent=t(good?"ok":"no");beep(good)}
+  if(kind!="pre"&&kind!="fin")adj(good);good?k++:miss.push(q.x);i++;setTimeout(step,kind=="pre"?300:1200)};
+ step()}
+const fin=kind=>(k,n,miss)=>{if(kind=="pre")S.pre={k,n};if(kind=="fin")S.post={k,n};
+ if(kind!="pre")miss.forEach(x=>S.box[x.en]={b:1,d:today()});save();if(kind!="pre")confetti();
+ paint(say2(t(kind=="pre"?"thx":"done"))+`<div class="panel"><h2>${t("res").replace("{a}",k).replace("{b}",n)}</h2></div>${kind=="fin"?`<button class="big" onclick="show(goProg)">📈 ${t("prog")}</button>`:""}${homeBtn()}`)};
+function goTest(){const pre=!S.pre;paint(say2(t(pre?"pre":"fin"))+`<button class="big" onclick="runT(${pre})">▶ ${t("start")}</button>`)}
+const runT=pre=>quiz(pre?"pre":"fin",W.filter((_,i)=>i%Math.max(1,Math.floor(W.length/8))==0).slice(0,8),fin(pre?"pre":"fin"));
+
+// Экран «Мой прогресс»: шкала «до» и «после» + слова, выученные в карточках
+function goProg(){const l=W.filter(x=>(S.box[x.en]||{b:0}).b>=3).length;
+ const bar=(n,v)=>`<p>${n}: <b>${v?v.k+" / "+v.n:"–"}</b></p><div class="bar"><i style="width:${v?v.k/v.n*100:0}%"></i></div>`;
+ paint(say2(t("prog"))+`<div class="panel">${bar(t("before"),S.pre)}${bar(t("after"),S.post)}<p>📚 ${t("lrn")}: <b>${l} / ${W.length}</b></p><div class="bar"><i style="width:${l/W.length*100}%"></i></div></div>${rew()}<button class="big" onclick="show(goCert)">🎓 ${t("cert")}</button>${homeBtn()}`)}
+
+// Настройки
+const seg=(k,o)=>`<div class="seg">${o.map(([v,n])=>`<button class="${S[k]==v?"on":""}" aria-pressed="${S[k]==v}" onclick="setS('${k}','${v}')">${n}</button>`).join("")}</div>`;
+function setS(k,v){S[k]=v;save();apply();show(goSet)}
+function goSet(){paint(`<h2>⚙️ ${t("set")}</h2><div class="panel"><h3>${t("mode")}</h3>${seg("mode",[["fun","😊 "+t("fun")],["calm","🌿 "+t("calm")],["proj","📽️ "+t("proj")]])}
+ <h3>${t("hint")}</h3>${seg("hint",[["ru","РУС"],["kk","ҚАЗ"],["both",t("both")]])}<h3>${t("acc")}</h3>${seg("acc",[["en-GB","UK"],["en-US","US"]])}
+ <h3>🔊 ${t("snd")}</h3>${seg("snd",[["1","ON"],["0","OFF"]])}<h3>✨ ${t("anim")}</h3>${seg("anim",[["1","ON"],["0","OFF"]])}</div><button class="big" onclick="show(goT)">🔒 ${{en:"Teacher",ru:"Учитель",kk:"Мұғалім"}[S.lang]}</button><button class="big" onclick="show(goMeth)">ℹ️ ${{en:"About",ru:"О проекте",kk:"Жоба туралы"}[S.lang]}</button>${homeBtn()}`)}
+
+/* ===== ЗАДАНИЯ: общие части ===== */
+// Подстройка сложности: 3 ошибки подряд → 2 варианта и подсказка; 5 верных подряд → 6 вариантов
+let AD={n:4,w:0,r:0,h:0},LM=[];
+const adj=g=>{if(g){AD.r++;AD.w=0;if(AD.r>=5){AD.n=6;AD.h=0}else if(AD.n==2&&AD.r>=2){AD.n=4;AD.h=0}}else{AD.w++;AD.r=0;if(AD.n==6)AD.n=4;if(AD.w>=3){AD.n=2;AD.h=1}}};
+const opts=(x,n=AD.n)=>sh([x,...sh(W.filter(y=>y!=x)).slice(0,n-1)]);
+const mk=(j,good)=>{const b=$("#o"+j);b.classList.add(good?"yes":"no");b.insertAdjacentHTML("afterbegin",good?"✓ ":"✗ ")};
+const strip=s=>s.replace(/[.,?!]/g,""),wd=p=>W.find(x=>x.en==p.w);
+// rounds: показывает по одному элементу списка; one(элемент, cb(верно?), "3/10")
+function rounds(list,one,after){let i=0,k=0,miss=[];cur=null;
+ const go=()=>{if(i>=list.length)return after(k,list.length,miss);
+  one(list[i],good=>{good?k++:miss.push(list[i]);i++;go()},`${i+1}/${list.length}`)};go()}
+// build: собрать цель (target) из перемешанных частей: слов (sep=" ") или букв (sep=""); пишет в #bd
+function build(items,target,sep,done){let pool=sh(items.map((x,i)=>({x,i}))),ans=[],fin=0;
+ const draw=()=>{$("#bd").innerHTML=`<div class="panel" style="min-height:4rem">${ans.map(c=>`<button class="chip" onclick="bm(${c.i},0)">${c.x}</button>`).join("")}</div><div>${pool.map(c=>`<button class="chip" onclick="bm(${c.i},1)">${c.x}</button>`).join("")}</div><button class="big" onclick="bc()" ${pool.length?"disabled":""}>✓ ${t("check")}</button>`};
+ window.bm=(i,up)=>{if(fin)return;const[f,g]=up?[pool,ans]:[ans,pool];g.push(f.splice(f.findIndex(c=>c.i==i),1)[0]);draw()};
+ window.bc=()=>{if(fin||pool.length)return;fin=1;const good=ans.map(c=>c.x).join(sep)==target;
+  $("#bd").insertAdjacentHTML("afterbegin",`<div class="bub" role="status">${good?"✓ "+t("ok"):"✗ "+target}</div>`);beep(good);setTimeout(()=>done(good),1400)};
+ draw()}
+
+/* ===== РАЗДЕЛ 3: СЛОВА В ПРЕДЛОЖЕНИЯХ ===== */
+function goSents(){paint(say2(t("sents"))+[["phr","💬","show(goPhr)"],["build","🧩","show(runB)"],["gap","✏️","show(runG)"],["dlg","🗨️","show(goDlg)"]].filter(a=>a[0]!="dlg"||DLG.length).map(([k,i,f])=>`<button class="big" onclick="${f}">${i} ${t(k)}</button>`).join("")+homeBtn())}
+function goPhr(){paint(P.map((p,i)=>`<div class="wc">${pic(wd(p),"s")}<div style="flex:1"><h3>${p.en}</h3>${hints(p)}</div>${canSay(S.acc)?`<button class="sp" onclick="sayP(${i})" aria-label="Audio">🔊</button>`:""}</div>`).join("")+homeBtn())}
+const sdone=(k,n)=>{confetti();paint(say2(t("done"))+`<div class="panel"><h2>${t("sc").replace("{a}",k).replace("{b}",n)}</h2></div><button class="big" onclick="show(goSents)">💬 ${t("sents")}</button>`+homeBtn())};
+// «Собери предложение»
+const runB=()=>rounds(sh(P),(p,cb,m)=>{paint(`<div class="meta">${m}</div>${pic(wd(p))}${hints(p)}<div id="bd"></div>`);build(p.en.split(" "),p.en," ",cb)},sdone);
+// «Вставь пропущенное слово»
+const runG=()=>rounds(sh(P),(p,cb,m)=>{const tk=p.en.split(" "),gi=tk.findIndex(s=>strip(s)==p.gap),core=strip(tk[gi]),
+ pool=[...new Set(P.flatMap(q=>q.en.split(" ").map(strip)))].filter(s=>s!=core),o=sh([core,...sh(pool).slice(0,2)]);
+ paint(`<div class="meta">${m}</div>${pic(wd(p))}<h2 style="text-align:center">${tk.map((s,j)=>j==gi?s.replace(core,"___"):s).join(" ")}</h2>${hints(p)}<div class="grid">${o.map((s,j)=>`<button class="opt" id="o${j}" onclick="gp(${j})">${s}</button>`).join("")}</div>`);
+ window.gp=j=>{const good=o[j]==core;mk(j,good);if(!good)mk(o.indexOf(core),1);beep(good);window.gp=()=>0;setTimeout(()=>cb(good),1200)}},sdone);
+// Мини-диалог: ребёнок выбирает реплику; ошибка не наказывается
+function goDlg(){let d=0;cur=null;
+ const bear=pic({en:"bear",e:"🐻"},"s"),me=`<div class="pic s">${fox()}</div>`;
+ const row=l=>`<div class="wc" style="${l.w=="c"?"flex-direction:row-reverse;border-left:0;border-right:.6rem solid var(--c)":""}">${l.w=="b"?bear:me}<div style="flex:1"><b>${l.en}</b>${hints(l)}</div></div>`;
+ const draw=()=>{while(d<DLG.length&&DLG[d].w=="b")d++;const shown=DLG.slice(0,d).map(row).join("");
+  if(d>=DLG.length){confetti();return paint(shown+say2(t("done"))+`<button class="big" onclick="show(goSents)">💬 ${t("sents")}</button>`+homeBtn())}
+  const L=DLG[d],o=sh([L.en,...L.o]);
+  paint(shown+say2(t("rep"))+`<div class="grid">${o.map((s,j)=>`<button class="opt" id="o${j}" onclick="dp(${j})">${s}</button>`).join("")}</div>`);
+  window.dp=j=>{if(o[j]==L.en){beep(1);d++;draw()}else{const b=$("#o"+j);b.classList.add("no");b.textContent="✗ "+o[j];beep(0);setTimeout(()=>b.classList.remove("no"),600)}}};
+ draw()}
+
+/* ===== РАЗДЕЛ 4: ЗАДАНИЯ (у каждого подписан тренируемый навык) ===== */
+function goTasks(){paint(say2(t("tasks"))+[1,2,3,4,5].filter(n=>(n!=3&&n!=5)||W.filter(x=>/^[A-Za-z]+$/.test(x.en)).length>1).map(n=>`<button class="big" style="text-align:left" onclick="runTask(${n},W)">${["🖼️","🔗","✍️","🎧","🔤"][n-1]} ${t("t"+n)}<br><small>${t("s"+n)} ${"⭐".repeat(S.stars[n]||0)}</small></button>`).join("")+homeBtn())}
+function runTask(n,list){RT=list===LM;if(n>10)return play(n-10,list);AD={n:4,w:0,r:0,h:0};const L=sh(list.filter(x=>(n!=3&&n!=5)||/^[A-Za-z]+$/.test(x.en))).slice(0,n==2?8:10),after=(k,tot,miss)=>taskDone(n,k,tot,miss);if(L.length<2)return paint(say2("🔤 ✗")+homeBtn());
+ if(n==1)quiz("pic",L,after);else if(n==4)quiz("hear",L,after);else if(n==2)match(L,after);else if(n==3)typeW(L,after);else spell(L,after)}
+// 2. Соедини слово и картинку (группы по 4 пары)
+function match(L,after){let g=0,k=0,miss=[];cur=null;const G=[];for(let i=0;i<L.length;i+=4)G.push(L.slice(i,i+4));
+ const board=()=>{if(g>=G.length)return after(k,L.length,miss);const ws=G[g];let sel=null,left=ws.length;const bad=new Set(),ix=x=>W.indexOf(x);
+  paint(`<div class="meta">${g+1}/${G.length}</div><div class="grid">${sh(ws).map(x=>`<button class="opt" id="p${ix(x)}" onclick="mp('p',${ix(x)})">${pic(x,"s")}</button>`).join("")}</div><div class="grid">${sh(ws).map(x=>`<button class="opt" id="w${ix(x)}" onclick="mp('w',${ix(x)})">${x.en}</button>`).join("")}</div>`);
+  window.mp=(c,i)=>{const b=$("#"+c+i);if(b.disabled)return;const on=e=>e.style.outline="4px solid #7a3cff";
+   if(!sel){sel={c,i};on(b);return}const a=$("#"+sel.c+sel.i);a.style.outline="";
+   if(sel.c==c){sel={c,i};on(b);return}
+   if(sel.i==i){[a,b].forEach(e=>{e.disabled=true;e.classList.add("yes");e.insertAdjacentHTML("afterbegin","✓ ")});beep(1);bad.has(i)?miss.push(W[i]):k++;sel=null;if(!--left){g++;setTimeout(board,900)}}
+   else{bad.add(i);bad.add(sel.i);[a,b].forEach(e=>e.classList.add("no"));beep(0);setTimeout(()=>[a,b].forEach(e=>e.classList.remove("no")),500);sel=null}}};
+ board()}
+// 3. Напиши слово по картинке
+const typeW=(L,after)=>rounds(L,(x,cb,m)=>{paint(`<div class="meta">${m}</div>${pic(x)}<p style="text-align:center;font-size:1.5rem">${AD.h?"💡 "+x.en[0]+" "+"_ ".repeat(x.en.length-1):""}</p>${hints(x)}<input id="ti" autocomplete="off" autocapitalize="none" spellcheck="false" aria-label="${t("t3")}"><button class="big" id="tc">✓ ${t("check")}</button><div id="fb"></div>`);
+ const go=()=>{const good=$("#ti").value.trim().toLowerCase()==x.en.toLowerCase();adj(good);$("#fb").innerHTML=`<div class="bub" role="status">${good?"✓ "+t("ok"):"✗ "+x.en}</div>`;beep(good);$("#tc").disabled=true;setTimeout(()=>cb(good),1400)};
+ $("#tc").onclick=go;$("#ti").onkeydown=e=>{if(e.key=="Enter"&&!$("#tc").disabled)go()};$("#ti").focus()},after);
+// 5. Собери слово из букв
+const spell=(L,after)=>rounds(L,(x,cb,m)=>{paint(`<div class="meta">${m}</div>${pic(x)}${AD.h?`<p style="text-align:center">💡 ${x.en[0]}…</p>`:""}${hints(x)}<div id="bd"></div>`);build(x.en.split(""),x.en,"",good=>{adj(good);cb(good)})},after);
+// итог задания: результат, звёзды (1-3), слова с ошибками, «Повторить ошибки»
+function taskDone(n,k,tot,miss){if(RT){addX(k*3);if(!miss.length&&k&&!S.bad.includes("b3")){S.bad.push("b3");toast("🎖️ "+t("b3"))}}const r=k/tot,st=r>=.9?3:r>=.6?2:1;S.stars[n]=Math.max(S.stars[n]||0,st);LM=miss;miss.forEach(x=>S.box[x.en]={b:1,d:today()});save();confetti();
+ paint(say2(t("done"))+`<div class="panel"><h2>${t("sc").replace("{a}",k).replace("{b}",tot)}</h2><p style="font-size:2rem" role="img" aria-label="${st}/3">${"★".repeat(st)}${"☆".repeat(3-st)}</p>${miss.length?`<h3>${t("mist")}</h3><div class="seg">${miss.map(x=>pic(x,"s")+"<b>"+x.en+"</b>").join("")}</div>`:""}</div>${miss.length?`<button class="big" onclick="runTask(${n},LM)">↻ ${t("retry")}</button>`:""}<button class="big" onclick="show(${n>10?"goGames":"goTasks"})">${n>10?"🎮 "+t("games"):"🎯 "+t("tasks")}</button>`+homeBtn())}
+
+/* ===== РАЗДЕЛ 5: ИГРЫ (без «смертей» и штрафов: ошибка просто не даёт очков) ===== */
+const GN=[["g1","🃏"],["g2","🎈"],["g3","👹"],["g4","🧺"],["g5","👥"]],REM=["🃏🖼️","🔊🎈","👹🍽️","🧺🐾","👥✅"];
+let G={d:"ez",n:"6",tm:"0",tc:"3"},TI;
+// категории для «Разложи по полкам»: домашние / ферма / дикие
+const CAT={},CI={pet:"🏠",farm:"🚜",wild:"🌳"};
+[["pet","cat dog bird fish rabbit"],["farm","horse cow duck pig sheep chicken"],["wild","elephant lion monkey bear frog"]].forEach(([c,s])=>s.split(" ").forEach(w=>CAT[w]=c));
+// слова с ошибками (коробка 1) попадают в игры чаще
+const pickW=(n,L=W)=>L.map(x=>[Math.random()*(S.box[x.en]&&S.box[x.en].b==1?.4:1),x]).sort((a,b)=>a[0]-b[0]).slice(0,n).map(x=>x[1]);
+function goGames(){paint(say2(t("games"))+GN.map(([k,i],n)=>`<button class="big" style="text-align:left" onclick="show(()=>setup(${n+1}))">${i} ${t(k)}<br><small>${t("o"+(n+1))} ${"⭐".repeat(S.stars[n+11]||0)}</small></button>`).map((h,n)=>CFG.games[n]&&(n!=3||Object.keys(CN).length>1)?h:"").join("")+homeBtn())}
+// экран перед игрой: правила в картинках на 3 языках, сложность, число слов, таймер (по умолчанию выкл.)
+function setup(n){const sg=(k,o)=>`<div class="seg">${o.map(([v,l])=>`<button class="${G[k]==v?"on":""}" aria-pressed="${G[k]==v}" onclick="G.${k}='${v}';show(()=>setup(${n}))">${l}</button>`).join("")}</div>`;
+ paint(`<h2>${GN[n-1][1]} ${t("g"+n)}</h2><div class="panel"><p style="font-size:2.4rem;margin:0">${REM[n-1]}</p>${["en","ru","kk"].map(l=>`<p><span class="tag">${l=="en"?"EN":l=="ru"?"РУС":"ҚАЗ"}</span>${translations[l]["r"+n]}</p>`).join("")}</div>
+ <div class="panel"><h3>${t("dif")}</h3>${sg("d",[["ez",t("ez")],["md",t("md")],["hd",t("hd")]])}<h3>${t("nw")}</h3>${sg("n",[["4","4"],["6","6"],["8","8"],["10","10"]])}${n==5?`<h3>${t("teams")}</h3>${sg("tc",[["2","2"],["3","3"],["4","4"]])}`:""}${CFG.timer=="1"?`<h3>⏱ ${t("tm")}</h3>${sg("tm",[["0","OFF"],["1","ON"]])}`:""}</div><button class="big" onclick="play(${n})">▶ ${t("go")}</button>${homeBtn()}`)}
+function play(n,list){clearInterval(TI);cur=null;const L=list||pickW(+G.n),lv=["ez","md","hd"].indexOf(G.d);
+ if(G.tm=="1"&&CFG.timer=="1"){let s=0;TI=setInterval(()=>{const e=$("#tm");if(e)e.textContent="⏱ "+ ++s},1000)}
+ [0,mem,bal,feed,sort,team][n](L,lv,(k,tot,miss)=>{clearInterval(TI);taskDone(n+10,k,tot,miss)})}
+// 1. Найди пару: лёгкий уровень — в начале карточки ненадолго открыты
+function mem(L,lv,end){const cs=sh(L.flatMap(x=>[{x,t:"p"},{x,t:"w"}]));let open=[],found=0,lock=0,k=0;const miss=[],bad=new Set();
+ const face=c=>c.t=="p"?pic(c.x,"s"):`<b>${c.x.en}</b>`,sw=(i,on)=>{$("#c"+i).innerHTML=on?face(cs[i]):"❓"};
+ paint(`<span id="tm" class="meta"></span><div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(6rem,1fr))">${cs.map((c,i)=>`<button class="opt" id="c${i}" style="min-height:6.5rem" onclick="cf(${i})" aria-label="?">❓</button>`).join("")}</div>${say2("🧠")}`);
+ if(lv<2){cs.forEach((_,i)=>sw(i,1));lock=1;setTimeout(()=>{cs.forEach((_,i)=>sw(i,0));lock=0},[3000,1500][lv])}
+ window.cf=i=>{const b=$("#c"+i);if(lock||b.disabled||open.includes(i))return;sw(i,1);open.push(i);if(open.length<2)return;
+  lock=1;const[p,q]=open,A=cs[p],B=cs[q];open=[];
+  if(A.x==B.x){[p,q].forEach(j=>{const e=$("#c"+j);e.disabled=true;e.classList.add("yes");e.insertAdjacentHTML("afterbegin","✓ ")});beep(1);bad.has(A.x)?miss.push(A.x):k++;lock=0;if(++found==L.length)setTimeout(()=>end(k,L.length,miss),900)}
+  else{bad.add(A.x);bad.add(B.x);beep(0);[p,q].forEach(j=>$("#c"+j).classList.add("no"));setTimeout(()=>{[p,q].forEach(j=>{$("#c"+j).classList.remove("no");sw(j,0)});lock=0},1000)}}}
+// 2. Лопни шарики: первые 2 раунда всегда с 3 шариками; неверный шарик просто тускнеет
+function bal(L,lv,end){let i=0,k=0,lock=0,wr=0,o;const miss=[];
+ const step=()=>{if(i>=L.length)return end(k,L.length,miss);const x=L[i];o=opts(x,i<2?3:[3,4,6][lv]);lock=0;wr=0;
+  paint(`<span id="tm" class="meta"></span><div style="text-align:center">${canSay("en")||x.audio?`<button class="big" onclick="say(${W.indexOf(x)},'en')" aria-label="Audio">🔊</button>`:`<h1>${x.en}</h1>`}</div><div class="sky">${o.map((y,j)=>`<button class="bln" id="o${j}" style="animation-duration:${[9,7,5][lv]+j}s;animation-delay:-${j*1.7}s" onclick="bp(${j})" aria-label="${y.en}">${pic(y,"s")}</button>`).join("")}</div>${say2(i+1+"/"+L.length)}`);
+  if(S.snd=="1")say(W.indexOf(x),"en")};
+ window.bp=j=>{if(lock)return;const good=o[j]==L[i];mk(j,good);$("#o"+j).disabled=true;beep(good);
+  if(good){lock=1;wr?miss.push(L[i]):k++;i++;setTimeout(step,1000)}else wr=1};
+ step()}
+// перетаскивание (мышь/палец) или нажатие: сначала на предмет (.dr), потом на цель (.tg) — работает и с клавиатуры
+function dnd(drop){let sel=null;const pick=el=>{if(sel)sel.style.outline="";sel=el;el.style.outline="4px solid #7a3cff"};
+ document.querySelectorAll(".dr").forEach(el=>{let d=0,sx,sy;
+  el.onpointerdown=e=>{d=1;sx=e.clientX;sy=e.clientY;el.setPointerCapture(e.pointerId)};
+  el.onpointermove=e=>{if(!d)return;const dx=e.clientX-sx,dy=e.clientY-sy;if(Math.abs(dx)+Math.abs(dy)>8)el.dataset.m=1;el.style.transform=`translate(${dx}px,${dy}px)`};
+  el.onpointerup=e=>{if(!d)return;d=0;const m=el.dataset.m;el.dataset.m="";el.style.transform="";
+   if(m){el.style.pointerEvents="none";const u=document.elementFromPoint(e.clientX,e.clientY);el.style.pointerEvents="";const tg=u&&u.closest(".tg");if(tg)drop(el,tg)}else pick(el)};
+  el.onkeydown=e=>{if(e.key=="Enter"||e.key==" "){e.preventDefault();pick(el)}}});
+ document.querySelectorAll(".tg").forEach(tg=>tg.onclick=()=>{if(sel){const s=sel;sel=null;s.style.outline="";drop(s,tg)}})}
+// 3. Накорми монстрика: «I want a cat!» → нужную карточку к монстрику
+function feed(L,lv,end){let i=0,k=0,wr=0,lk=0;const miss=[];
+ const step=()=>{if(i>=L.length)return end(k,L.length,miss);const x=L[i],o=opts(x,i<2?3:[3,4,6][lv]),ph=`I want ${/^[aeiou]/.test(x.en)?"an":"a"} ${x.en}!`;wr=0;lk=0;
+  paint(`<span id="tm" class="meta"></span><button class="tg" id="mon" style="font-size:5rem;background:var(--card);border:4px solid var(--c);width:100%;min-height:9rem;color:var(--ink)" aria-label="monster">👹</button><div class="say"><div class="bub" id="bub">${ph} ${canSay("en")?`<button class="sp" onclick="utter('${ph}',S.acc)" aria-label="Audio">🔊</button>`:""}</div></div><div class="grid">${o.map(y=>`<button class="opt dr" data-i="${W.indexOf(y)}">${pic(y,"s")}<br>${y.en}</button>`).join("")}</div>`);
+  if(S.snd=="1")utter(ph,S.acc);
+  dnd(el=>{if(lk)return;if(W[+el.dataset.i]==x){lk=1;beep(1);$("#mon").textContent="😋";$("#bub").textContent="✓ "+t("ok");wr?miss.push(x):k++;i++;setTimeout(step,1100)}
+   else{wr=1;beep(0);el.classList.add("no");el.insertAdjacentHTML("afterbegin","✗ ");setTimeout(()=>el.classList.remove("no"),500)}})};
+ step()}
+// 4. Разложи по полкам: лёгкий уровень — 2 полки, средний/сложный — 3
+function sort(L,lv,end){L=L.filter(x=>CAT[x.en]);let cs=Object.keys(CN);if(lv==0&&cs.length>2){const c2=cs.slice(1,3),f=L.filter(x=>c2.includes(CAT[x.en]));if(f.length>1){L=f;cs=c2}}
+ let k=0,left=L.length;const miss=[],bad=new Set(),all=L;
+ paint(`<span id="tm" class="meta"></span><div class="grid">${cs.map(c=>`<button class="tg opt" data-t="${c}" style="min-height:8rem"><span style="font-size:2.5rem">${CN[c][0]}</span><br>${CN[c][{en:1,ru:2,kk:3}[S.lang]]}<div id="in${c}"></div></button>`).join("")}</div><div class="grid">${L.map(x=>`<button class="opt dr" data-i="${W.indexOf(x)}">${pic(x,"s")}<br>${x.en}</button>`).join("")}</div>${say2("🧺")}`);
+ dnd((el,tg)=>{const x=W[+el.dataset.i];
+  if(CAT[x.en]==tg.dataset.t){beep(1);$("#in"+tg.dataset.t).insertAdjacentHTML("beforeend",`<span>✓${x.e}</span>`);el.remove();bad.has(x)?miss.push(x):k++;if(!--left)setTimeout(()=>end(k,all.length,miss),900)}
+  else{bad.add(x);beep(0);el.classList.add("no");el.insertAdjacentHTML("afterbegin","✗ ");setTimeout(()=>el.classList.remove("no"),500)}})}
+// 5. Командная игра (режим «Проектор»): учитель нажимает «верно / пока нет»; победа у всех команд
+function team(L,lv,end){const T=+G.tc,sc=Array(T).fill(0),ic=["1️⃣","2️⃣","3️⃣","4️⃣"];let i=0;document.documentElement.dataset.m="proj";
+ const step=()=>{if(i>=L.length){confetti();return paint(`<h1 style="text-align:center">🏆 ${t("all")}</h1><div class="grid">${sc.map((s,j)=>`<div class="panel" style="text-align:center">${ic[j]}<br><b style="font-size:2.4rem">${s}</b> ${t("pts")}<br>${"⭐".repeat(Math.max(1,Math.min(3,Math.round(s*T/L.length*3))))}</div>`).join("")}</div><button class="big" onclick="play(5)">↻ ${t("again2")}</button><button class="big" onclick="show(goGames)">🎮 ${t("games")}</button>`)}
+  const x=L[i],c=i%T;
+  paint(`<span id="tm" class="meta"></span><div class="grid">${sc.map((s,j)=>`<div class="panel" style="text-align:center;${j==c?"outline:6px solid #7a3cff":""}">${ic[j]} <b>${s}</b>${j==c?" 👈":""}</div>`).join("")}</div>${pic(x)}<h1 id="rv" style="text-align:center"></h1><button class="big" onclick="$('#rv').textContent='${x.en}'">👁 ${t("rev")}</button><div class="row"><button class="big yes" onclick="tr(1)">${t("yes")}</button><button class="big no" onclick="tr(0)">${t("nope")}</button></div>`)};
+ window.tr=g=>{if(g)sc[i%T]++;beep(g);i++;step()};step()}
+
+/* ===== НАГРАДЫ И ПРОФИЛИ ===== */
+// у каждого ребёнка свой прогресс (PF); настройки учителя — CFG (здесь же PIN, по умолчанию 1234)
+const PF=["box","pre","post","stars","xp","bad","dx","U"],FRESH=()=>({box:{},pre:null,post:null,stars:{},xp:0,bad:[],dx:{},U:{}}),AV=["🦊","🐱","🐶","🐰","🐼","🦁","🐸","🐧"];
+let PR={id:"p1",list:{p1:{name:"Друг",av:"🦊"}}},CFG={pin:"1234",games:[1,1,1,1,1],timer:"1",streak:"1",daily:"0"},RT=0,TOK=0,AVS="🦊";
+const LV=[0,100,300,600],lvOf=x=>LV.filter(v=>x>=v).length,BD=[["b1","🌱"],["b2","📚"],["b3","🛠️"],["b4","🏁"],["b5","📅"]];
+function toast(m){const e=document.createElement("div");e.className="toast";e.setAttribute("role","status");e.textContent=m;document.body.appendChild(e);setTimeout(()=>e.remove(),3000)}
+const learned=(K=S.box)=>W.filter(x=>(K[x.en]||{b:0}).b>=3).length;
+// значки (= наклейки в альбоме); b3 выдаётся в taskDone
+function chkB(){const ok={b1:S.xp>0,b2:learned()>=10,b4:!!S.post,b5:Object.keys(S.dx).length>=5};for(const k in ok)if(ok[k]&&!S.bad.includes(k)){S.bad.push(k);toast("🎖️ "+t(k))}}
+function stk(){let s=0,d=today();if(!S.dx[d])d--;while(S.dx[d]){s++;d--}return s}
+// уровень, XP, серия дней (можно отключить), рекорд, «сравни себя с прошлой неделей», альбом наклеек
+function rew(){const lv=lvOf(S.xp),nx=LV[lv],sm=(a,b)=>{let s=0;for(let i=a;i<=b;i++)s+=S.dx[today()-i]||0;return s},w1=sm(0,6),w0=sm(7,13);
+ return `<div class="panel"><h3>🏅 ${t("lv"+lv)} · ${S.xp} XP</h3><div class="bar"><i style="width:${nx?(S.xp-LV[lv-1])/(nx-LV[lv-1])*100:100}%"></i></div>${CFG.streak=="1"?`<p>🔥 ${t("stk")}: <b>${stk()}</b> ${t("dys")}</p>`:""}<p>🏆 ${t("rec")}: <b>${Math.max(0,...Object.values(S.dx))}</b> XP</p><p>📈 ${t("wk")}: <b>${w1}</b> ${w1>=w0?"↑":"↓"} ${w0}</p></div>
+ <div class="panel"><h3>🎖️ ${t("bd")}</h3><div class="seg">${BD.map(([k,i])=>`<span class="chip" style="padding:.4rem .8rem;border-radius:1rem">${S.bad.includes(k)?i+" "+t(k):"🔒"}</span>`).join("")}</div></div>`}
+function goCert(){const p=PR.list[PR.id];paint(`<div class="panel" style="text-align:center;border:8px double var(--c)"><h1>🎓 ${t("pt")}</h1><h2>${p.av} ${p.name}</h2><p>${TOPIC[S.lang]}: ${learned()}/${W.length}</p><p>🏅 ${t("lv"+lvOf(S.xp))} · ${S.xp} XP</p><p style="font-size:2rem">${BD.filter(([k])=>S.bad.includes(k)).map(b=>b[1]).join(" ")}</p><p>${new Date().toLocaleDateString()}</p></div><button class="big" onclick="print()">🖨️ ${t("prn")}</button><div class="noprint">${homeBtn()}</div>`)}
+// профили без регистрации: имя + аватар
+function useP(id){save();PR.id=id;Object.assign(S,FRESH(),PR.list[id]);const u=S.U[S.unit]||{pre:null,post:null,stars:{}};S.pre=u.pre;S.post=u.post;S.stars=u.stars;save();hdr();show(goHome)}
+function goMe(){const p=PR.list[PR.id];paint(`<h2>${p.av} ${p.name}</h2><div class="panel">${Object.entries(PR.list).map(([id,q])=>`<button class="big ${id==PR.id?"yes":""}" onclick="useP('${id}')">${id==PR.id?"✓ ":""}${q.av} ${q.name}</button>`).join("")}</div><div class="panel"><input id="pn" maxlength="12" placeholder="${t("nm")}" aria-label="${t("nm")}"><div class="seg" id="av">${AV.map(a=>`<button class="${a==AVS?"on":""}" onclick="AVS='${a}';[...document.querySelectorAll('#av button')].forEach(b=>b.classList.toggle('on',b.textContent=='${a}'))">${a}</button>`).join("")}</div><button class="big" onclick="addP()">➕ ${t("add")}</button></div><div class="row"><button class="big" onclick="expP()" aria-label="Save">💾</button><button class="big" onclick="impP()" aria-label="Load">📂</button></div>${homeBtn()}`)}
+function addP(){const id="p"+Date.now();PR.list[id]={name:$("#pn").value.trim().slice(0,12)||"Друг",av:AVS,...FRESH()};useP(id)}
+// файлы: скачать / загрузить JSON
+const dlf=(n,o)=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(o)],{type:"application/json"}));a.download=n;a.click()};
+const rdf=cb=>{const i=document.createElement("input");i.type="file";i.accept=".json";i.onchange=()=>{const r=new FileReader();r.onload=()=>{try{cb(JSON.parse(r.result))}catch(e){toast("⚠ Файл не подходит")}};r.readAsText(i.files[0])};i.click()};
+const expP=()=>{save();dlf("progress.json",{PR,CFG})};
+const impP=()=>rdf(j=>{PR=j.PR;Object.assign(CFG,j.CFG||{});Object.assign(S,FRESH(),PR.list[PR.id]);save();hdr();show(goHome);toast("✓")});
+
+/* ===== РЕЖИМ УЧИТЕЛЯ (панель на русском; PIN защищает только от случайных нажатий) ===== */
+function goT(){if(TOK)return tmenu();paint(`<h2>🔒 Режим учителя</h2><input id="pi" type="password" inputmode="numeric" autocomplete="off" aria-label="PIN"><button class="big" onclick="chkP()">OK</button><p><small>⚠ PIN защищает только от случайных нажатий детей, а не от взлома: он хранится в самом файле.</small></p>${homeBtn()}`)}
+function chkP(){if($("#pi").value==CFG.pin){TOK=1;show(tmenu)}else{$("#pi").value="";toast("✗ PIN")}}
+function tmenu(){paint(`<h2>🔒 Учитель</h2>${[["📝 Слова","twords"],["📊 Статистика","tstat"],["🖨️ Отчёт для родителей","trep"],["⚙️ Для детей, данные, сброс, PIN","tset"],["ℹ️ О проекте / Методика","goMeth"]].map(([l,f])=>`<button class="big" onclick="show(${f})">${l}</button>`).join("")}${homeBtn()}`)}
+function sure(b,fn){if(b.dataset.c)fn();else{b.dataset.c=1;b.textContent="⚠ Точно? Нажми ещё раз"}}
+// слова: правка, добавление, удаление, отметка «проверен», своя картинка и аудио
+function twords(){const f=(i,k,w=8)=>`<input value="${(W[i][k]||"").replace(/"/g,"&quot;")}" onchange="W[${i}].${k}=this.value;saveW()" aria-label="${k}" style="width:${w}rem;min-width:0">`;
+ paint(`<h2>📝 Слова</h2><button class="big" onclick="W.push({en:'new',e:'❓',ipa:'',ru:'',kk:'',topic:'animals',cefr:'A1',ctx:'',audio:'',img:'',ex:'This is a new.',verified:{ru:false,kk:false}});saveW();twords()">➕ Добавить слово</button>${W.map((x,i)=>`<div class="panel"><div class="seg">${f(i,"en",6)}${f(i,"ru")}${f(i,"kk")}${f(i,"ipa",6)}${f(i,"cefr",3)}${f(i,"ctx",9)}</div>${f(i,"ex",16)}<p>${["ru","kk"].map(l=>`<label><input type="checkbox" style="width:auto" ${x.verified[l]?"checked":""} onchange="W[${i}].verified.${l}=this.checked;saveW()"> ${l.toUpperCase()} проверен</label>`).join(" ")} ${!ART[x.en]&&!x.img?"ℹ эмодзи вместо рисунка":""}</p><label>🖼️ <input type="file" accept="image/*" style="width:auto" onchange="upI(${i},this.files[0])"></label> <label>🔊 <input type="file" accept="audio/*" style="width:auto" onchange="upA(${i},this.files[0])"></label> <button onclick="sure(this,()=>{W.splice(${i},1);saveW();twords()})">🗑️</button></div>`).join("")}<button class="big" onclick="show(tmenu)">⬅</button>`)}
+function upI(i,f){if(!f)return;const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const s=Math.min(1,400/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=im.width*s;c.height=im.height*s;c.getContext("2d").drawImage(im,0,0,c.width,c.height);let q=.8,u;do{u=c.toDataURL("image/jpeg",q);q-=.1}while(u.length>270000&&q>.2);W[i].img=u;saveW();twords()};im.src=r.result};r.readAsDataURL(f)}
+function upA(i,f){if(!f)return;if(f.size>300000)return toast("⚠ Аудио больше 300 КБ");const r=new FileReader();r.onload=()=>{W[i].audio=r.result;saveW();twords()};r.readAsDataURL(f)}
+// статистика класса и учеников
+function tstat(){save();const L=Object.entries(PR.list),wk={},gs=[];
+ L.forEach(([,q])=>{W.forEach(x=>{if(((q.box||{})[x.en]||{b:9}).b==1)wk[x.en]=(wk[x.en]||0)+1});Object.entries(q.stars||{}).forEach(([n,s])=>gs[n]=(gs[n]||0)+s)});
+ paint(`<h2>📊 Статистика</h2><div class="panel" style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><tr><th>Ученик</th><th>XP</th><th>Слов</th><th>До→После</th><th>Дней</th></tr>${L.map(([,q])=>`<tr><td>${q.av} ${q.name}</td><td>${q.xp||0}</td><td>${learned(q.box||{})}/${W.length}</td><td>${q.pre?q.pre.k:"–"}→${q.post?q.post.k:"–"}</td><td>${Object.keys(q.dx||{}).length}</td></tr>`).join("")}</table></div>
+ <div class="panel"><h3>Трудные слова (класс)</h3>${Object.entries(wk).sort((a,b)=>b[1]-a[1]).slice(0,8).map(([w,n])=>`<span class="tag">${w} ×${n}</span>`).join(" ")||"–"}</div>
+ <div class="panel"><h3>Любимые игры и задания (сумма звёзд)</h3>${gs.map((s,n)=>s?(n>10?GN[n-11][1]+" "+t("g"+(n-10)):"🎯 "+t("t"+n))+": "+s+"⭐":"").filter(Boolean).join("<br>")||"–"}</div><button class="big" onclick="show(tmenu)">⬅</button>`)}
+// отчёт для родителей (печать / PDF); совет — на русском или казахском по языку интерфейса
+function trep(id){if(typeof id!="string"){save();return paint(`<h2>🖨️ Отчёт</h2>${Object.entries(PR.list).map(([i,q])=>`<button class="big" onclick="trep('${i}')">${q.av} ${q.name}</button>`).join("")}<button class="big" onclick="show(tmenu)">⬅</button>`)}
+ const q=PR.list[id],K=q.box||{},rp=W.filter(x=>K[x.en]&&K[x.en].b==1),st=Object.entries(q.stars||{}).filter(([,s])=>s==3).map(([n])=>n>10?t("g"+(n-10)):t("t"+n));
+ paint(`<div class="panel"><h1>${q.av} ${q.name}</h1><p>${TOPIC[S.lang]}: <b>${learned(K)}/${W.length}</b></p><p>Входной тест: <b>${q.pre?q.pre.k+"/"+q.pre.n:"–"}</b> → итоговый: <b>${q.post?q.post.k+"/"+q.post.n:"–"}</b></p><p>💪 Сильные стороны: ${st.join(", ")||"–"}</p><p>🔁 Повторить дома: ${rp.map(x=>x.e+" "+x.en+" ("+x.ru+")").join(", ")||"–"}</p><p>💬 ${S.lang=="kk"?"Күніне 5 сөзді қайталаңыз: суретті көрсетіп, ағылшынша атауын сұраңыз. Күш салғаны үшін мақтаңыз.":"Повторяйте по 5 слов в день: показывайте картинку и просите назвать слово по-английски. Хвалите за старание, а не только за результат."}</p></div><button class="big" onclick="print()">🖨️ Печать / PDF</button><div class="noprint"><button class="big" onclick="trep()">⬅</button></div>`)}
+// настройки для детей, экспорт/импорт, сброс, PIN
+function rst(id){(id?[id]:Object.keys(PR.list)).forEach(i=>{Object.assign(PR.list[i],FRESH());if(i==PR.id)Object.assign(S,FRESH())});save();toast("✓");tset()}
+function tset(){const c=(k,v,l)=>`<label style="display:block;margin:.4rem 0"><input type="checkbox" style="width:auto" ${v?"checked":""} onchange="${k}"> ${l}</label>`,used=()=>{try{return Math.round(localStorage.getItem(KEY).length/1024)}catch(e){return 0}};
+ paint(`<h2>⚙️ Для детей</h2><div class="panel"><h3>Игры</h3>${GN.map(([k,i],n)=>c(`CFG.games[${n}]=this.checked?1:0;save()`,CFG.games[n],i+" "+t(k))).join("")}${c("CFG.timer=this.checked?'1':'0';save()",CFG.timer=="1","⏱ Таймеры доступны")}${c("CFG.streak=this.checked?'1':'0';save()",CFG.streak=="1","🔥 Серия дней")}${c("CFG.daily=this.checked?'1':'0';save()",CFG.daily=="1","☀️ Ежедневное задание (5 слов)")}</div>
+ <div class="panel"><h3>Данные</h3><button class="big" onclick="dlf('words.json',{W,P,DLG})">⬇ Экспорт слов, фраз, диалогов (JSON)</button><button class="big" onclick="rdf(j=>{W.splice(0,W.length,...j.W);P.splice(0,P.length,...j.P);DLG.splice(0,DLG.length,...j.DLG);saveW();toast('✓')})">⬆ Импорт (JSON)</button><button class="big" onclick="expP()">💾 Прогресс в файл</button><button class="big" onclick="impP()">📂 Прогресс из файла</button><p>Занято: ${used()} КБ из ~5000</p></div>
+ <div class="panel"><h3>Сброс прогресса</h3>${Object.entries(PR.list).map(([i,q])=>`<button onclick="sure(this,()=>rst('${i}'))">🗑️ ${q.av} ${q.name}</button>`).join(" ")}<button class="big" onclick="sure(this,()=>rst())">🗑️ Все ученики</button></div>
+ <div class="panel"><h3>PIN</h3><input id="np" inputmode="numeric" maxlength="8" aria-label="PIN"><button class="big" onclick="if($('#np').value){CFG.pin=$('#np').value;save();toast('✓')}">OK</button><small>⚠ PIN защищает только от случайных нажатий.</small></div><button class="big" onclick="show(tmenu)">⬅</button>`)}
+// страница «О проекте / Методика»
+function goMeth(){paint(`<h2>ℹ️ О проекте / Методика</h2><div class="panel"><p><b>Цель:</b> помочь детям 7–10 лет (уровень CEFR A1, родные языки — русский и казахский) выучить слова и простые фразы по 22 темам программы 3 класса (и бонусной теме «Животные») через картинки, повторение и игру.</p><p><b>Тема:</b> ${W.length} слов, ${P.length} фраз и мини-диалог. Перед темой — входной тест без оценок, после — итоговый.</p></div>
+ <div class="panel" style="overflow-x:auto"><table><tr><th>Раздел</th><th>Навык</th></tr><tr><td>🖼️ Словарь</td><td>узнавание, связь слова с образом, произношение</td></tr><tr><td>🃏 Карточки</td><td>запоминание, интервальное повторение (Лейтнер: 0/1/3/7/14 дней)</td></tr><tr><td>💬 Предложения</td><td>чтение, порядок слов, говорение (диалог)</td></tr><tr><td>🎯 Задания</td><td>узнавание, письмо, орфография, аудирование; сложность подстраивается</td></tr><tr><td>🎮 Игры</td><td>запоминание, аудирование, понимание фраз, классификация, работа в команде</td></tr></table></div>
+ <div class="panel"><p><b>Оценка прогресса:</b> слова «до» и «после» темы (одни и те же 8 слов), слова в коробках 3–5 Лейтнера, звёзды за задания и игры, XP и значки за усилие и исправление ошибок. Рейтингов между детьми нет: ребёнок сравнивает себя только с собой.</p><p><b>Ограничения:</b> переводы на русский и казахский нужно проверить носителями (отметка «проверен»); PIN защищает только от случайных нажатий.</p></div>${homeBtn()}`)}
+
+/* ===== ТЕМЫ (UNITS): меню, переключение, данные ===== */
+let CN={};
+const U={},UL=[...Array.from({length:22},(_,i)=>"t"+(i+1)),"animals"];
+W.forEach(x=>x.c=CAT[x.en]);
+U.animals={e:"🐾",bg:"#e4f6e0",col:"#4d7c0f",n:{en:"Bonus: Animals",ru:"Бонус: Животные",kk:"Бонус: Жануарлар"},cn:{pet:["🏠","Pets","Домашние","Үй жануарлары"],farm:["🚜","Farm","Ферма","Ферма"],wild:["🌳","Wild","Дикие","Жабайы"]},phr:P.slice(),dlg:DLG.slice(),words:W.slice()};
+// unit(): слова = [en, картинка, транскрипция, ru, kk, категория для игры «Полки»]; фразы = [en, ru, kk, слово для картинки, пропускаемое слово]
+function unit(id,e,bg,col,n,cn,rows,ph){const phr=ph.map(([en,ru,kk,w,gap])=>({en,ru,kk,w,gap}));
+ U[id]={e,bg,col,n,cn,phr,dlg:[],words:rows.map(([en,em,ipa,ru,kk,c])=>({en,e:em,ipa,ru,kk,c,topic:id,cefr:"A1",ctx:"",audio:"",img:"",
+  ex:(phr.find(p=>(" "+strip(p.en.toLowerCase())+" ").includes(" "+en+" "))||{en:"Look: "+en+"!"}).en,verified:{ru:false,kk:false}}))}}
+const soon=(id,e,col,en,ru,kk)=>U[id]={soon:1,e,col,n:{en,ru,kk}};
+
+/* ===== 22 ТЕМЫ из файла English_Vocabulary_for_Grade_3.docx (темы 1-11 заполнены, 12-22 — «Скоро») ===== */
+// строка слова: en|ru|kk|картинка|категория для «Полок»|пометка (в скобках)|свой пример
+const T=s=>s.trim().split("\n").map(l=>l.split("|"));
+const PAL=[["#0e7c86","#e0f7fa"],["#7a3cff","#ede7ff"],["#c2410c","#ffe8d6"],["#237a37","#e3f6e3"],["#b4236b","#ffe4f1"],["#1d4ed8","#e0ecff"],["#8a5a00","#fff3d1"],["#a21caf","#f6e3ff"]];
+const TIC=["👋","🎨","🔢","🎒","📏","📢","👨‍👩‍👧","😊","🧑","🌦️","👕","🏃","🧸","🖐️","🍎","🍔","🥤","🏠","🛏️","🏙️","🏖️","🚌"];
+const TN=T(`Greetings|Приветствия|Сәлемдесу
+Colours|Цвета|Түстер
+Numbers (1–100)|Числа (1–100)|Сандар (1–100)
+My School Bag|Мой школьный портфель|Менің мектеп сөмкем
+Adjectives|Прилагательные|Сын есімдер
+Classroom Instructions|Команды в классе|Сыныптағы командалар
+My Family|Моя семья|Менің отбасым
+Personality|Характер|Мінез-құлық
+Appearance|Внешность|Сыртқы келбет
+Weather and Seasons|Погода и времена года|Ауа райы және жыл мезгілдері
+Clothes|Одежда|Киімдер
+I Can Do This!|Я это умею!|Мен мұны істей аламын!
+Toys|Игрушки|Ойыншықтар
+My Body|Моё тело|Менің дене мүшелерім
+Healthy Food|Полезная еда|Пайдалы тағамдар
+Junk Food|Вредная еда|Зиянды тағамдар
+Drinks|Напитки|Сусындар
+My Home|Мой дом|Менің үйім
+My Room|Моя комната|Менің бөлмем
+Places in Town|Места в городе|Қаладағы орындар
+Holidays and Beach|Каникулы и пляж|Демалыс және жағажай
+Transport|Транспорт|Көлік түрлері`);
+// tp: число = фразы берутся из самих слов (минимум столько слов в строке); массив = шаблон [en, ru, kk] для фраз и примеров
+function unit2(n,rows,tp,cn){const[col,bg]=PAL[(n-1)%8],nm=TN[n-1],self=typeof tp=="number",
+ fill=r=>{const w=r[0].toLowerCase(),a=/[^s]s$/.test(w)?"":/^[aeiou]/.test(w)?"an ":"a ";return tp[0].replace("{a}",a).replace("{w}",w)},
+ ph=self?rows.filter(r=>r[0].split(" ").length>=tp).slice(0,5).map(r=>[r[0],r[1],r[2],r[0],r[0].split(" ")[0]])
+  :rows.filter(r=>/^[A-Za-z]+$/.test(r[0])).slice(0,5).map(r=>[fill(r),tp[1].replace("{r}",r[1].toLowerCase()),tp[2].replace("{k}",r[2].toLowerCase()),r[0],r[0].toLowerCase()]);
+ unit("t"+n,TIC[n-1],bg,col,{en:n+". "+nm[0],ru:n+". "+nm[1],kk:n+". "+nm[2]},cn||{},rows.map(r=>[r[0],r[3],"",r[1],r[2],r[4]||""]),ph);
+ U["t"+n].words.forEach((x,i)=>{x.ctx=rows[i][5]||"";x.ex=rows[i][6]||(self?x.en:fill(rows[i]))})}
+
+unit2(1,T(`Hello|Привет|Сәлем|👋
+Hi|Привет|Сәлем|🙋
+My name is…|Меня зовут…|Менің атым…|🏷️
+What’s your name?|Как тебя зовут?|Сенің атың кім?|❓
+This is…|Это…|Бұл…|👉
+Goodbye|До свидания|Сау бол|🖐️
+Bye|Пока|Сау бол|🚶
+Good morning|Доброе утро|Қайырлы таң|🌅
+Good afternoon|Добрый день|Қайырлы күн|☀️
+Good evening|Добрый вечер|Қайырлы кеш|🌆`),2);
+unit2(2,T(`Blue|синий|Көк|🔵
+Red|красный|Қызыл|🔴
+Yellow|жёлтый|Сары|🟡
+Black|чёрный|Қара|⚫
+Green|зелёный|Жасыл|🟢
+Purple|фиолетовый|Күлгін|🟣
+Orange|оранжевый|Қызғылт сары|🟠
+White|белый|Ақ|⚪
+Pink|розовый|Қызғылт|🌸
+Brown|коричневый|Қоңыр|🟤
+Grey|серый|Сұр|🔘`),["I like {w}.","Мне нравится {r} цвет.","Маған {k} түс ұнайды."]);
+// числа 1-100: английский, русский и казахский названия строятся правилами
+const NE="_ one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen".split(" "),TE="_ _ twenty thirty forty fifty sixty seventy eighty ninety".split(" "),
+ NR="_ один два три четыре пять шесть семь восемь девять десять одиннадцать двенадцать тринадцать четырнадцать пятнадцать шестнадцать семнадцать восемнадцать девятнадцать".split(" "),TR="_ _ двадцать тридцать сорок пятьдесят шестьдесят семьдесят восемьдесят девяносто".split(" "),
+ NK="_ бір екі үш төрт бес алты жеті сегіз тоғыз".split(" "),TK="_ он жиырма отыз қырық елу алпыс жетпіс сексен тоқсан".split(" "),NUM=[];
+for(let n=1;n<=100;n++){const d=Math.floor(n/10),u=n%10,en=n==100?"one hundred":n<20?NE[n]:TE[d]+(u?"-"+NE[u]:"");
+ NUM.push([en[0].toUpperCase()+en.slice(1),n==100?"сто":n<20?NR[n]:TR[d]+(u?" "+NR[u]:""),n==100?"жүз":n<10?NK[n]:TK[d]+(u?" "+NK[u]:""),""+n])}
+unit2(3,NUM,["It is {w}.","Это {r}.","Бұл — {k}."]);
+unit2(4,T(`Notebook|тетрадь|Дәптер|📓
+Sharpener|точилка|Ұштағыш|🔧
+Book|книга|Кітап|📖
+Pencil|карандаш|Қарындаш|✏️
+Desk|парта|Парта|🪑
+Rubber|ластик|Өшіргіш|🧽||Eraser
+Ruler|линейка|Сызғыш|📏
+Pen|ручка|Қалам|🖊️
+Pencil case|пенал|Пенал|👝
+School bag|школьная сумка|Мектеп сөмкесі|🎒
+Scissors|ножницы|Қайшы|✂️
+Glue|клей|Желім|🧴
+Crayon|цветной мелок|Балауыз қарындаш|🖍️
+School|школа|Мектеп|🏫`),["I have {a}{w}.","У меня есть {r}.","Менде {k} бар."]);
+unit2(5,T(`Big|большой|Үлкен|🐘
+Small|маленький|Кішкентай|🐜
+Old|старый|Ескі|👴
+New|новый|Жаңа|🆕
+Long|длинный|Ұзын|🐍
+Short|короткий|Қысқа|🤏
+Tall|высокий|Бойшаң|🦒
+Young|молодой|Жас|👶
+Beautiful|красивый|Әдемі|🌺
+Happy|счастливый|Бақытты|😀
+Sad|грустный|Көңілсіз|😢
+Fast|быстрый|Жылдам|🐆
+Slow|медленный|Баяу|🐢
+Strong|сильный|Күшті|💪
+Clean|чистый|Таза|🧼
+Dirty|грязный|Лас|🐷`),["He is {w}.","Он {r}.","Ол {k}."]);
+unit2(6,T(`Take out your book|Достань книгу|Кітабыңды шығар|📘
+Put your hand up|Подними руку|Қолыңды көтер|🙋
+Open your school bag|Открой сумку|Сөмкеңді аш|🎒
+Be quiet|Сиди тихо|Тыныш отыр|🤫
+Stand up|Встань|Орныңнан тұр|🧍
+Sit down|Сядь|Отыр|🪑
+Point to the door|Покажи на дверь|Есікке көрсет|🚪
+Close your book|Закрой книгу|Кітабыңды жап|📕
+Listen|Слушай|Тыңда|👂
+Look|Смотри|Қара|👀
+Repeat|Повтори|Қайтала|🔁
+Read|Читай|Оқы|🔤
+Write|Пиши|Жаз|✍️
+Come here|Иди сюда|Мұнда кел|🏃
+Open your book|Открой книгу|Кітабыңды аш|📖
+Work in pairs|Работайте в парах|Жұппен жұмыс істе|👫`),3);
+unit2(7,T(`Mother|мама|Ана|👩
+Father|папа|Әке|👨
+Grandfather|дедушка|Ата|🧓
+Grandmother|бабушка|Әже|👩‍🦳
+Brother|брат|Аға / Іні|👦
+Sister|сестра|Әпке / Сіңлі|👧
+Baby|малыш|Нәресте|👶
+Family|семья|Отбасы|👨‍👩‍👧‍👦
+Parents|родители|Ата-ана|👫
+Grandparents|бабушка и дедушка|Ата-әже|👴👵
+Son|сын|Ұл|🧒
+Daughter|дочь|Қыз|🎀`),["Here is my {w}.","Вот {r}.","Міне, {k}."]);
+unit2(8,T(`Kind|добрый|Мейірімді|🤗
+Friendly|дружелюбный|Ақкөңіл|😊
+Funny|весёлый|Көңілді|🤡
+Clever|умный|Ақылды|🧠
+Shy|застенчивый|Ұялшақ|🙈
+Naughty|шаловливый|Тентек|😜
+Helpful|отзывчивый|Көмекшіл|🤝
+Brave|смелый|Батыл|🦁
+Polite|вежливый|Әдепті|🙏
+Lazy|ленивый|Жалқау|🦥
+Happy|счастливый|Бақытты|😀
+Angry|сердитый|Ашулы|😠
+Hard-working|трудолюбивый|Еңбекқор|🐜
+Honest|честный|Адал|😇`),["He is {w}.","Он {r}.","Ол {k}."]);
+unit2(9,T(`Hair|волосы|Шаш|💇|h
+Dark hair|тёмные волосы|Қара шаш|⚫|h
+Fair hair|светлые волосы|Ашық түсті шаш|🟡|h
+Curly hair|кудрявые волосы|Бұйра шаш|🌀|h
+Straight hair|прямые волосы|Түзу шаш|➖|h
+Long hair|длинные волосы|Ұзын шаш|💆|h
+Short hair|короткие волосы|Қысқа шаш|✂️|h
+Ponytail|хвостик|Құйрық шаш|🐴|h
+Eyes|глаза|Көздер|👀|f
+Brown eyes|карие глаза|Қоңыр көздер|🟤|f
+Blue eyes|голубые глаза|Көк көздер|🔵|f
+Green eyes|зелёные глаза|Жасыл көздер|🟢|f
+Glasses|очки|Көзілдірік|👓|f
+Beard|борода|Сақал|🧔|f
+Moustache|усы|Мұрт|🥸|f
+Nose|нос|Мұрын|👃|f
+Mouth|рот|Ауыз|👄|f
+Ears|уши|Құлақтар|👂|f
+Face|лицо|Бет|🙂|f`),["Look at the {w}!","Смотри: {r}!","Қара: {k}!"],{h:["💇","Hair","Волосы","Шаш"],f:["🙂","Face","Лицо","Бет"]});
+unit2(10,T(`Winter|зима|Қыс|❄️|s
+Spring|весна|Көктем|🌱|s
+Summer|лето|Жаз|☀️|s
+Autumn|осень|Күз|🍂|s|Fall
+Sunny|солнечно|Күн ашық|🌞|w
+Hot|жарко|Ыстық|🥵|w
+Cold|холодно|Суық|🥶|w
+Snowy|снежно|Қарлы|☃️|w
+Rainy|дождливо|Жаңбырлы|🌧️|w
+Windy|ветрено|Желді|💨|w
+Cloudy|облачно|Бұлтты|☁️|w
+Foggy|туманно|Тұманды|🌫️|w
+Stormy|штормовая погода|Дауылды|⛈️|w
+Warm|тепло|Жылы|♨️|w
+Cool|прохладно|Салқын|😎|w
+Snow|снег|Қар|🌨️|w||I like snow.
+Rain|дождь|Жаңбыр|☔|w||I like rain.
+Wind|ветер|Жел|🌬️|w||I like wind.`),["It is {w}.","Сейчас {r}.","Қазір {k}."],{s:["🍃","Seasons","Времена года","Жыл мезгілдері"],w:["⛅","Weather","Погода","Ауа райы"]});
+unit2(11,T(`Jeans|джинсы|Джинсы|👖
+Dress|платье|Көйлек|👗
+Jacket|куртка|Күртеше|🧥
+Shorts|шорты|Шолақ шалбар|🩳
+Gloves|перчатки|Қолғап|🧤
+T-shirt|футболка|Футболка|👕
+Shoes|обувь|Аяқ киім|👞
+Skirt|юбка|Белдемше|👚
+Hat|головной убор|Бас киім|🎩
+Boots|сапоги|Етік|🥾
+Sneakers|кроссовки|Кроссовки|👟||Trainers
+Socks|носки|Шұлық|🧦
+Sweater|свитер|Свитер|🧶
+Hoodie|худи|Капюшонды кофта|🦺
+Coat|пальто|Пальто|🥼
+Scarf|шарф|Мойынорағыш|🧣
+Cap|кепка|Кепка|🧢
+Pyjamas|пижама|Пижама|🛌
+Shirt|рубашка|Жейде|👔
+Sandals|сандалии|Сандал|🩴`),["I have {a}{w}.","У меня есть {r}.","Менде {k} бар."]);
+/* ===== ТЕМЫ 12-22 ===== */
+unit2(12,T(`Run|бегать|Жүгіру|🏃
+Cook|готовить|Тамақ пісіру|🍳
+Think|думать|Ойлау|🤔
+Climb|лазать|Өрмелеу|🧗
+Dance|танцевать|Билеу|💃
+Skateboard|кататься на скейтборде|Скейтборд тебу|🛹
+Jump|прыгать|Секіру|🤸
+Draw|рисовать|Сурет салу|🎨
+Sing|петь|Ән айту|🎤
+Swim|плавать|Жүзу|🏊
+Read|читать|Оқу|📖
+Write|писать|Жазу|✍️
+Ride a bike|кататься на велосипеде|Велосипед тебу|🚴
+Play football|играть в футбол|Футбол ойнау|⚽
+Play basketball|играть в баскетбол|Баскетбол ойнау|🏀
+Play tennis|играть в теннис|Теннис ойнау|🎾
+Go to the park|идти в парк|Саябаққа бару|🏞️
+Play with friends|играть с друзьями|Достармен ойнау|🤝
+Run fast|быстро бегать|Жылдам жүгіру|💨
+Ride a horse|кататься на лошади|Атқа міну|🏇`),["I can {w}.","Я умею: {r}.","Мен істей аламын: {k}."]);
+unit2(13,T(`Train|поезд|Пойыз|🚂
+Ball|мяч|Доп|⚽
+Robot|робот|Робот|🤖
+Jigsaw puzzle|пазл|Пазл|🧩
+Scooter|самокат|Самокат|🛴
+Toy bricks|конструктор|Құрастырғыш|🧱
+Car|машина|Көлік|🚗
+Teddy bear|плюшевый мишка|Қонжық|🧸
+Doll|кукла|Қуыршақ|🎎
+Kite|воздушный змей|Батпырауық|🪁
+Plane|самолёт|Ұшақ|✈️
+Boat|лодка|Қайық|⛵
+Yo-yo|йо-йо|Йо-йо|🪀
+Blocks|кубики|Текшелер|🧊`),["I have {a}{w}.","У меня есть {r}.","Менде {k} бар."]);
+unit2(14,T(`Head|голова|Бас|👤|b
+Hair|волосы|Шаш|💇|b
+Eyes|глаза|Көздер|👀|b
+Ears|уши|Құлақтар|👂|b
+Nose|нос|Мұрын|👃|b
+Mouth|рот|Ауыз|👄|b
+Teeth|зубы|Тістер|🦷|b
+Neck|шея|Мойын|🦢|b
+Shoulders|плечи|Иықтар|🤷|b
+Arms|руки|Қолдар|💪|b
+Hands|кисти рук|Қол басы|✋|b
+Fingers|пальцы|Қол саусақтары|🖐️|b
+Legs|ноги|Аяқтар|🦵|b
+Knees|колени|Тізелер|🧎|b
+Feet|ступни|Табандар|🦶|b
+Toes|пальцы ног|Аяқ саусақтары|👣|b
+Back|спина|Арқа|🔙|b
+Tummy|животик|Іш|😋|b
+Bend your knees|Согни колени|Тізеңді бүк|🧘|a||Bend your knees!
+Clap your hands|Хлопни в ладоши|Қол шапалақта|👏|a||Clap your hands!
+Hop on one leg|Прыгай на одной ноге|Бір аяқпен секір|🦘|a||Hop on one leg!
+Stomp your feet|Топай ногами|Аяғыңмен жер теп|🥾|a||Stomp your feet!
+Touch your head|Коснись головы|Басыңа қолыңды тигіз|🙆|a||Touch your head!
+Stretch your arms|Вытяни руки|Қолдарыңды соз|🙌|a||Stretch your arms!
+Shake your hands|Потряси руками|Қолдарыңды сілкі|👋|a||Shake your hands!
+Turn your head|Поверни голову|Басыңды бұр|🔄|a||Turn your head!
+Touch your toes|Коснись пальцев ног|Аяқ саусақтарыңа тигіз|🤸|a||Touch your toes!
+Wave your hands|Помаши руками|Қолдарыңды бұлға|🙋|a||Wave your hands!`),["Look at the {w}!","Смотри: {r}!","Қара: {k}!"],{b:["🧍","Body parts","Части тела","Дене мүшелері"],a:["🤸","Actions","Движения","Қимылдар"]});
+unit2(15,T(`Apple|яблоко|Алма|🍎|f
+Banana|банан|Банан|🍌|f
+Orange|апельсин|Апельсин|🍊|f
+Grapes|виноград|Жүзім|🍇|f
+Strawberry|клубника|Құлпынай|🍓|f
+Watermelon|арбуз|Қарбыз|🍉|f
+Pear|груша|Алмұрт|🍐|f
+Peach|персик|Шабдалы|🍑|f
+Lemon|лимон|Лимон|🍋|f
+Pineapple|ананас|Ананас|🍍|f
+Cherry|вишня|Шие|🍒|f
+Melon|дыня|Қауын|🍈|f
+Carrot|морковь|Сәбіз|🥕|v
+Potato|картофель|Картоп|🥔|v
+Tomato|помидор|Қызанақ|🍅|v
+Cucumber|огурец|Қияр|🥒|v
+Onion|лук|Пияз|🧅|v
+Cabbage|капуста|Қырыққабат|🥬|v
+Broccoli|брокколи|Брокколи|🥦|v
+Pepper|перец|Бұрыш|🌶️|v
+Corn|кукуруза|Жүгері|🌽|v
+Peas|горох|Бұршақ|🟢|v
+Pumpkin|тыква|Асқабақ|🎃|v
+Beetroot|свёкла|Қызылша|🟣|v
+Eggs|яйца|Жұмыртқа|🥚|o
+Fish|рыба|Балық|🐟|o
+Chicken|курица (мясо)|Тауық еті|🍗|o
+Rice|рис|Күріш|🍚|o
+Cheese|сыр|Ірімшік|🧀|o
+Milk|молоко|Сүт|🥛|o
+Yogurt|йогурт|Йогурт|🍨|o
+Bread|хлеб|Нан|🍞|o
+Porridge|каша|Ботқа|🥣|o`),["Look at the {w}!","Смотри: {r}!","Қара: {k}!"],{f:["🍎","Fruits","Фрукты","Жемістер"],v:["🥕","Vegetables","Овощи","Көкөністер"],o:["🥚","Other","Другое","Басқа"]});
+unit2(16,T(`Hamburger|гамбургер|Гамбургер|🍔||Burger
+Pizza|пицца|Пицца|🍕
+Chips|чипсы|Чипсы|🥔||Crisps
+French fries|картофель фри|Фри картобы|🍟
+Hot dog|хот-дог|Хот-дог|🌭
+Sandwich|сэндвич|Сэндвич|🥪
+Cake|торт|Торт|🍰
+Chocolate|шоколад|Шоколад|🍫
+Candy|конфеты|Кәмпит|🍬||Sweets
+Ice cream|мороженое|Балмұздақ|🍦
+Donut|пончик|Пончик|🍩
+Cookies|печенье|Печенье|🍪
+Popcorn|попкорн|Попкорн|🍿
+Lollipop|леденец|Тәтті кәмпит|🍭
+Biscuits|галетное печенье|Печенье|🥠`),["Look at the {w}!","Смотри: {r}!","Қара: {k}!"]);
+unit2(17,T(`Water|вода|Су|💧
+Juice|сок|Шырын|🧃
+Orange juice|апельсиновый сок|Апельсин шырыны|🍊
+Apple juice|яблочный сок|Алма шырыны|🍏
+Milk|молоко|Сүт|🥛
+Tea|чай|Шай|🍵
+Lemonade|лимонад|Лимонад|🍋
+Hot chocolate|горячий шоколад|Ыстық шоколад|☕
+Smoothie|смузи|Смузи|🍹
+Milkshake|молочный коктейль|Сүт коктейлі|🥤
+Fizzy drink|газированный напиток|Газдалған сусын|🥫
+Mineral water|минеральная вода|Минералды су|🚰`),["I like {w}.","Мне нравится: {r}.","Маған {k} ұнайды."]);
+unit2(18,T(`House|дом|Үй|🏠|b
+Flat|квартира|Пәтер|🏢|b|Apartment
+School|школа|Мектеп|🏫|b
+Hospital|больница|Аурухана|🏥|b
+Shop|магазин|Дүкен|🏪|b
+Supermarket|супермаркет|Супермаркет|🛒|b
+Restaurant|ресторан|Мейрамхана|🍽️|b
+Library|библиотека|Кітапхана|📚|b
+Cinema|кинотеатр|Кинотеатр|🎬|b
+Park|парк|Саябақ|🏞️|b
+Zoo|зоопарк|Хайуанаттар бағы|🦓|b
+Playground|детская площадка|Ойын алаңы|🎠|b
+Garden|сад|Бақша|🌷|r
+Hall|прихожая|Дәліз|🏛️|r
+Living room|гостиная|Қонақ бөлме|🛋️|r
+Kitchen|кухня|Ас үй|🍳|r
+Bathroom|ванная|Жуынатын бөлме|🛁|r
+Bedroom|спальня|Жатын бөлме|🛌|r
+Dining room|столовая|Асхана|🍴|r
+Balcony|балкон|Балкон|🌇|r
+Garage|гараж|Гараж|🚗|r
+Toilet|туалет|Дәретхана|🚽|r
+Stairs|лестница|Баспалдақ|🪜|r
+Door|дверь|Есік|🚪|r
+Window|окно|Терезе|🪟|r
+Roof|крыша|Шатыр|🏘️|r`),["Look at the {w}!","Смотри: {r}!","Қара: {k}!"],{b:["🏢","Buildings","Здания","Ғимараттар"],r:["🛋️","Rooms and places","Комнаты и места","Бөлмелер мен орындар"]});
+unit2(19,T(`Bed|кровать|Төсек|🛏️
+Sofa|диван|Диван|🛋️
+Armchair|кресло|Жұмсақ орындық|💺
+Chair|стул|Орындық|🪑
+Table|стол|Үстел|🍽️
+Desk|письменный стол|Жазу үстелі|🖥️
+Wardrobe|платяной шкаф|Киім шкафы|👔
+Bookshelf|книжная полка|Кітап сөресі|📚
+Shelf|полка|Сөре|🗂️
+Lamp|лампа|Шам|💡
+Clock|часы|Сағат|🕐
+Mirror|зеркало|Айна|🪞
+Mat|коврик|Кішкентай төсеніш|🟫
+Carpet|ковёр|Кілем|🟥
+Pillow|подушка|Жастық|💤
+Blanket|одеяло|Көрпе|🧶
+Fridge|холодильник|Тоңазытқыш|🧊||Refrigerator
+Cooker|плита|Плита|🔥
+Oven|духовка|Пеш|♨️
+Sink|раковина|Қолжуғыш|🚰
+Bath|ванна|Ванна|🛁
+Shower|душ|Душ|🚿
+Toilet|туалет|Дәретхана|🚽
+TV|телевизор|Теледидар|📺||Television
+Curtains|шторы|Перделер|🪟
+Bin|мусорное ведро|Қоқыс шелегі|🗑️`),["I have {a}{w}.","У меня есть {r}.","Менде {k} бар."]);
+unit2(20,T(`Post office|почта|Пошта|📮
+Toy shop|магазин игрушек|Ойыншық дүкені|🧸
+Café|кафе|Кафе|☕
+Pet shop|зоомагазин|Үй жануарлары дүкені|🐕
+School|школа|Мектеп|🏫
+Bookshop|книжный магазин|Кітап дүкені|📚
+Supermarket|супермаркет|Супермаркет|🛒
+Pharmacy|аптека|Дәріхана|💊
+Bus stop|автобусная остановка|Автобус аялдамасы|🚏
+Hospital|больница|Аурухана|🏥
+Police station|полицейский участок|Полиция бөлімшесі|🚓
+Fire station|пожарная часть|Өрт сөндіру бекеті|🚒
+Bakery|пекарня|Наубайхана|🥖
+Bank|банк|Банк|🏦
+Restaurant|ресторан|Мейрамхана|🍽️
+Cinema|кинотеатр|Кинотеатр|🎬
+Library|библиотека|Кітапхана|📖
+Playground|детская площадка|Ойын алаңы|🎠
+Park|парк|Саябақ|🏞️
+Swimming pool|бассейн|Жүзу бассейні|🏊
+Train station|вокзал|Теміржол вокзалы|🚉`),["This is {a}{w}.","Это {r}.","Бұл {k}."]);
+unit2(21,T(`Beach|пляж|Жағажай|🏖️
+Towel|полотенце|Сүлгі|🧺
+Sunglasses|солнцезащитные очки|Күннен қорғайтын көзілдірік|🕶️
+Sun hat|шляпа от солнца|Күннен қорғайтын бас киім|👒
+Swimming trunks|плавки|Жүзуге арналған ерлер жүзу киімі|🩳
+Swimsuit|купальник|Купальник|👙
+Sunscreen|солнцезащитный крем|Күннен қорғайтын крем|🧴||Sun cream
+Sandals|сандалии|Сандал|🩴
+Flip-flops|шлёпанцы|Шлёпанцы|👡
+Beach ball|пляжный мяч|Жағажай добы|🏐
+Umbrella|зонт от солнца|Қолшатыр|⛱️
+Bucket|ведёрко|Шелек|🪣
+Spade|лопатка|Күрекше|⛏️
+Sandcastle|замок из песка|Құмнан жасалған қамал|🏰
+Seashell|морская ракушка|Теңіз бақалшағы|🐚
+Sea|море|Теңіз|🌊
+Sand|песок|Құм|⏳
+Waves|волны|Толқындар|🏄
+Sun|солнце|Күн|☀️
+Holiday|отдых, каникулы|Демалыс|🎉
+Suitcase|чемодан|Чемодан|🧳
+Backpack|рюкзак|Арқа сөмкесі|🎒
+Camera|фотоаппарат|Фотоаппарат|📷
+Passport|паспорт|Паспорт|🛂
+Map|карта|Карта|🗺️
+Hotel|отель|Қонақүй|🏨
+Swimming pool|бассейн|Бассейн|🏊`),["I see {a}{w}.","Я вижу: {r}.","Мен көремін: {k}."]);
+unit2(22,T(`Helicopter|вертолёт|Тікұшақ|🚁
+Train|поезд|Пойыз|🚆
+Plane|самолёт|Ұшақ|✈️
+Car|машина|Көлік|🚗
+Bus|автобус|Автобус|🚌
+Motorbike|мотоцикл|Мотоцикл|🏍️
+Boat|лодка|Қайық|⛵
+Lorry|грузовик|Жүк көлігі|🚚||Truck
+Bicycle|велосипед|Велосипед|🚲||Bike
+Scooter|самокат|Самокат|🛴
+Taxi|такси|Такси|🚕
+Ship|корабль|Кеме|🚢
+Van|фургон|Фургон|🚐
+Tram|трамвай|Трамвай|🚋
+Underground|метро|Метро|🚇||Metro
+Ambulance|скорая помощь|Жедел жәрдем көлігі|🚑
+Fire engine|пожарная машина|Өрт сөндіру көлігі|🚒
+Police car|полицейская машина|Полиция көлігі|🚓
+Tractor|трактор|Трактор|🚜
+Rocket|ракета|Зымыран|🚀`),["This is {a}{w}.","Это {r}.","Бұл {k}."]);
+
+/* ===== РИСУНКИ SVG вместо самых сомнительных эмодзи (ключ = английское слово; рисунок важнее эмодзи) ===== */
+Object.assign(ART,{
+"Sharpener":["#e0f7fa",`<rect x="20" y="38" width="58" height="30" rx="8" fill="#ffb11f" stroke="#0003"/><circle cx="37" cy="53" r="8" fill="#5b3a1a"/><rect x="56" y="44" width="14" height="18" fill="#cfd8dc"/><path d="M38 78q12-8 24 0q-12 7-24 0z" fill="#f3c9a0"/>`],
+"Pencil case":["#ede7ff",`<path d="M28 38l-5-14M50 36v-16M72 38l5-14" stroke="#e63946" stroke-width="6" stroke-linecap="round"/><rect x="12" y="36" width="76" height="32" rx="15" fill="#7a3cff" stroke="#0003"/><path d="M12 52h76" stroke="#fff" stroke-width="3"/><rect x="40" y="46" width="20" height="10" rx="3" fill="#ffd23f"/>`],
+"Rubber":["#ffe4f1",`<rect x="16" y="38" width="68" height="30" rx="7" fill="#ff8fa3" stroke="#0003"/><rect x="16" y="38" width="28" height="30" rx="7" fill="#4aa3e8"/><circle cx="30" cy="80" r="2.5" fill="#999"/><circle cx="40" cy="84" r="2" fill="#999"/><circle cx="24" cy="86" r="2" fill="#999"/>`],
+"Skirt":["#ffe4f1",`<path d="M38 26h24l17 48H21z" fill="#e0527a" stroke="#0003"/><rect x="37" y="22" width="26" height="8" rx="3" fill="#b3265a"/><path d="M26 66q6 6 12 0t12 0 12 0 12 0" stroke="#fff" fill="none" stroke-width="2.5"/>`],
+"Hoodie":["#e0ecff",`<path d="M32 34h36l18 14-8 11-8-6v27H30V53l-8 6-8-11z" fill="#4aa3e8" stroke="#0003"/><path d="M34 34q16-20 32 0q-16 11-32 0z" fill="#2f7fc0"/><rect x="38" y="62" width="24" height="12" rx="4" fill="#2f7fc0"/><path d="M45 42v11M55 42v11" stroke="#fff" stroke-width="2"/>`],
+"Coat":["#fff3d1",`<path d="M32 20h36l13 19-7 9-6-4v38H32V44l-6 4-7-9z" fill="#8a5a33" stroke="#0003"/><path d="M38 20l12 16 12-16z" fill="#c98a4b"/><circle cx="50" cy="46" r="2.8" fill="#ffd23f"/><circle cx="50" cy="60" r="2.8" fill="#ffd23f"/><circle cx="50" cy="74" r="2.8" fill="#ffd23f"/>`],
+"Neck":["#e3f4d4",`<path d="M20 90q0-24 30-24t30 24z" fill="#4aa3e8"/><rect x="42" y="44" width="16" height="26" fill="#e8a76f"/><circle cx="50" cy="30" r="17" fill="#f3c9a0" stroke="#0003"/>${EYES(43,30,14,2.4)}<path d="M36 52q14 9 28 0" stroke="#e63946" stroke-width="3" fill="none" stroke-dasharray="4 3"/>`],
+"Tummy":["#ffe8d6",`<path d="M32 16h36l10 26-9 40H31l-9-40z" fill="#ffd9b0" stroke="#0003"/><circle cx="50" cy="56" r="16" fill="none" stroke="#e63946" stroke-width="3" stroke-dasharray="4 3"/><circle cx="50" cy="56" r="3" fill="#8a5a33"/>`],
+"Shoulders":["#e3f4d4",`<path d="M12 84q0-34 38-34t38 34z" fill="#f3c9a0" stroke="#0003"/><circle cx="50" cy="30" r="14" fill="#f3c9a0" stroke="#0003"/><circle cx="24" cy="60" r="9" fill="none" stroke="#e63946" stroke-width="3"/><circle cx="76" cy="60" r="9" fill="none" stroke="#e63946" stroke-width="3"/>`],
+"Mat":["#e3f6e3",`<rect x="16" y="44" width="68" height="24" rx="4" fill="#ff9a5c" stroke="#0003"/><path d="M28 44v24M44 44v24M60 44v24M74 44v24" stroke="#fff" stroke-width="3"/><path d="M10 50h6M10 58h6M10 66h6M84 50h6M84 58h6M84 66h6" stroke="#ff9a5c" stroke-width="3"/>`],
+"Carpet":["#fff3d1",`<rect x="10" y="28" width="80" height="44" rx="4" fill="#e0527a" stroke="#0003"/><rect x="18" y="36" width="64" height="28" fill="none" stroke="#ffd23f" stroke-width="3"/><circle cx="50" cy="50" r="8" fill="#ffd23f"/><path d="M10 76v8M24 76v8M38 76v8M52 76v8M66 76v8M80 76v8" stroke="#e0527a" stroke-width="3"/>`],
+"Sand":["#d9eefc",`<path d="M0 66q25-22 50-6t50-10v50H0z" fill="#f5d38a"/><path d="M18 76q10-4 20 0M56 82q10-4 20 0" stroke="#d9a94a" fill="none" stroke-width="2"/><circle cx="72" cy="28" r="11" fill="#ffd23f"/>`],
+"Waves":["#e0f7fa",`<path d="M0 46q12-14 25 0t25 0 25 0 25 0v54H0z" fill="#4aa3e8"/><path d="M0 62q12-14 25 0t25 0 25 0 25 0" stroke="#fff" fill="none" stroke-width="3"/><path d="M0 78q12-14 25 0t25 0 25 0 25 0" stroke="#cfeeff" fill="none" stroke-width="3"/>`],
+"Towel":["#e0f7fa",`<rect x="26" y="14" width="48" height="66" rx="4" fill="#4aa3e8" stroke="#0003"/><path d="M26 32h48M26 44h48" stroke="#fff" stroke-width="5"/><path d="M30 80v9M40 80v9M50 80v9M60 80v9M70 80v9" stroke="#4aa3e8" stroke-width="3"/>`],
+"Curtains":["#ffe8d6",`<rect x="10" y="12" width="80" height="6" fill="#8a5a33"/><rect x="40" y="18" width="20" height="58" fill="#cfeeff"/><path d="M12 18h28v60q-14-10-28 0z" fill="#e0527a" stroke="#0003"/><path d="M60 18h28v60q-14-10-28 0z" fill="#e0527a" stroke="#0003"/><path d="M22 18v58M31 18v58M69 18v58M78 18v58" stroke="#b3265a" stroke-width="1.5"/>`],
+"Doll":["#ffe4f1",`<path d="M36 40h28l12 46H24z" fill="#e0527a" stroke="#0003"/><circle cx="50" cy="26" r="15" fill="#f3c9a0" stroke="#0003"/><path d="M34 26q16-22 32 0q-8-8-16-8t-16 8z" fill="#8a5a33"/>${EYES(44,28,12,2.2)}<path d="M45 34q5 4 10 0" stroke="#c0392b" stroke-width="2" fill="none"/>`],
+"Blocks":["#ede7ff",`<rect x="18" y="54" width="30" height="30" fill="#e63946" stroke="#0003"/><rect x="52" y="54" width="30" height="30" fill="#4aa3e8" stroke="#0003"/><rect x="35" y="22" width="30" height="30" fill="#ffd23f" stroke="#0003"/><text x="33" y="76" font-size="20" font-weight="bold" fill="#fff" text-anchor="middle">A</text><text x="67" y="76" font-size="20" font-weight="bold" fill="#fff" text-anchor="middle">B</text><text x="50" y="44" font-size="20" font-weight="bold" fill="#17323a" text-anchor="middle">C</text>`],
+"Pillow":["#e0ecff",`<path d="M16 32q34-10 68 0q-6 18 0 36q-34 10-68 0q6-18 0-36z" fill="#fff" stroke="#4aa3e8" stroke-width="3"/><path d="M30 50h40" stroke="#4aa3e8" stroke-width="3" stroke-dasharray="4 4"/>`],
+"Blanket":["#ffe8d6",`<rect x="14" y="28" width="72" height="46" rx="6" fill="#ff9a5c" stroke="#0003"/><path d="M14 40h72M14 52h72M14 64h72M32 28v46M50 28v46M68 28v46" stroke="#ffd0a8" stroke-width="2"/>`],
+"Peas":["#fff3d1",`<path d="M10 62q40-42 80 0q-40 20-80 0z" fill="#58b947" stroke="#2d7a22" stroke-width="2"/><circle cx="30" cy="58" r="8" fill="#9be37f" stroke="#2d7a22"/><circle cx="50" cy="59" r="8" fill="#9be37f" stroke="#2d7a22"/><circle cx="70" cy="58" r="8" fill="#9be37f" stroke="#2d7a22"/>`],
+"Beetroot":["#e4f6e0",`<path d="M50 34c22 0 28 22 20 38q-8 12-20 12t-20-12c-8-16-2-38 20-38z" fill="#9c2a62" stroke="#0003"/><path d="M50 34q-8-14-18-16M50 34q0-16 4-22M50 34q8-12 18-14" stroke="#58b947" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M50 84v8" stroke="#9c2a62" stroke-width="3"/>`],
+"Mirror":["#ede7ff",`<ellipse cx="50" cy="42" rx="24" ry="30" fill="#e8f7ff" stroke="#c98a4b" stroke-width="5"/><path d="M38 32q4-8 12-10" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/><rect x="44" y="72" width="12" height="18" rx="3" fill="#c98a4b"/>`],
+"Bucket":["#d9eefc",`<path d="M26 42h48l-6 40H32z" fill="#e63946" stroke="#0003"/><ellipse cx="50" cy="42" rx="24" ry="6" fill="#ff8fa3" stroke="#0003"/><path d="M28 40q22-34 44 0" stroke="#555" stroke-width="3" fill="none"/>`],
+"Spade":["#f5e8c4",`<rect x="38" y="10" width="24" height="7" rx="3" fill="#8a5a33"/><rect x="47" y="16" width="6" height="34" fill="#a8703d"/><path d="M32 50h36l-4 30q-14 8-28 0z" fill="#e63946" stroke="#0003"/>`],
+"Stairs":["#fff3d1",`<path d="M14 82V68h18V54h18V40h18V26h18v56z" fill="#c98a4b" stroke="#0003"/><path d="M14 68h18M32 54h18M50 40h18M68 26h18" stroke="#8a5a33" stroke-width="3"/>`],
+"Window":["#e0f7fa",`<rect x="20" y="16" width="60" height="64" rx="4" fill="#cfeeff" stroke="#8a5a33" stroke-width="6"/><path d="M50 16v64M20 48h60" stroke="#8a5a33" stroke-width="5"/><path d="M28 30l10-8" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M14 86h72" stroke="#8a5a33" stroke-width="6"/>`],
+"Yo-yo":["#ffe8d6",`<circle cx="50" cy="62" r="22" fill="#e63946" stroke="#0003"/><circle cx="50" cy="62" r="8" fill="#ffd23f"/><path d="M50 40V14" stroke="#555" stroke-width="3"/><circle cx="50" cy="12" r="4" fill="none" stroke="#555" stroke-width="3"/>`],
+"Shelf":["#ede7ff",`<rect x="14" y="30" width="72" height="6" fill="#a8703d"/><rect x="14" y="64" width="72" height="6" fill="#a8703d"/><rect x="20" y="14" width="10" height="16" fill="#e63946"/><rect x="31" y="18" width="10" height="12" fill="#4aa3e8"/><rect x="42" y="12" width="10" height="18" fill="#58b947"/><circle cx="30" cy="55" r="9" fill="#ffd23f"/><rect x="52" y="46" width="24" height="18" fill="#7a3cff"/>`],
+"Bookshelf":["#fff3d1",`<rect x="22" y="10" width="56" height="80" fill="#c98a4b" stroke="#0003"/><path d="M22 36h56M22 63h56" stroke="#8a5a33" stroke-width="3"/><path d="M28 14h8v22h-8zM38 18h8v18h-8zM48 14h8v22h-8zM58 20h8v16h-8zM28 41h8v22h-8zM38 45h8v18h-8zM52 41h8v22h-8zM64 47h8v16h-8zM30 68h8v22h-8zM42 72h8v18h-8zM54 68h8v22h-8z" fill="#e63946"/><path d="M38 18h8v18h-8zM58 20h8v16h-8zM38 45h8v18h-8zM64 47h8v16h-8zM42 72h8v18h-8z" fill="#4aa3e8"/>`],
+"Hall":["#e0ecff",`<path d="M14 16L40 34v32L14 84z" fill="#cfd8dc" stroke="#0003"/><path d="M86 16L60 34v32l26 18z" fill="#cfd8dc" stroke="#0003"/><rect x="40" y="34" width="20" height="32" fill="#c98a4b" stroke="#0003"/><path d="M14 84L40 66h20l26 18z" fill="#a8703d" stroke="#0003"/><circle cx="56" cy="50" r="2" fill="#ffd23f"/>`]
+});
+// ДИАЛОГИ: b = друг-медведь говорит; c = ребёнок выбирает ответ (после перевода — два неверных варианта)
+const D=(n,s)=>{U["t"+n].dlg=s.trim().split("\n").map(l=>{const a=l.split("|");return a[0]=="b"?{w:"b",en:a[1],ru:a[2],kk:a[3]}:{w:"c",en:a[1],ru:a[2],kk:a[3],o:[a[4],a[5]]}})};
+D(1,`b|Hello! What’s your name?|Привет! Как тебя зовут?|Сәлем! Сенің атың кім?
+c|My name is Aida.|Меня зовут Аида.|Менің атым Айда.|Goodbye!|Good evening.
+b|Good morning, Aida!|Доброе утро, Аида!|Қайырлы таң, Айда!
+c|Good morning!|Доброе утро!|Қайырлы таң!|Good evening!|Bye!`);
+D(2,`b|Do you like red?|Тебе нравится красный?|Саған қызыл түс ұнай ма?
+c|Yes, I do.|Да, нравится.|Иә, ұнайды.|I am ten.|This is a pen.
+b|What colour is the sky?|Какого цвета небо?|Аспан қандай түсті?
+c|It is blue.|Оно синее.|Ол көк.|It is green.|It is pink.`);
+D(3,`b|How old are you?|Сколько тебе лет?|Сен неше жастасың?
+c|I am eight.|Мне восемь.|Мен сегіз жастамын.|I am red.|I am a book.
+b|What is after five?|Какое число после пяти?|Бестен кейін қандай сан?
+c|Six.|Шесть.|Алты.|Four.|Ten.`);
+D(4,`b|What is in your school bag?|Что в твоём портфеле?|Сенің мектеп сөмкеңде не бар?
+c|I have a book and a pen.|У меня есть книга и ручка.|Менде кітап пен қалам бар.|I am happy.|It is sunny.
+b|Do you have a ruler?|У тебя есть линейка?|Сенде сызғыш бар ма?
+c|Yes, I do.|Да, есть.|Иә, бар.|It is cold.|Good evening.`);
+D(5,`b|Is the elephant big or small?|Слон большой или маленький?|Піл үлкен бе, кішкентай ма?
+c|It is big.|Он большой.|Ол үлкен.|It is small.|It is dirty.
+b|Is the snake long or short?|Змея длинная или короткая?|Жылан ұзын ба, қысқа ма?
+c|It is long.|Она длинная.|Ол ұзын.|It is short.|It is slow.`);
+D(6,`b|Open your book, please.|Открой книгу, пожалуйста.|Кітабыңды аш, өтінемін.
+c|OK!|Хорошо!|Жақсы!|Goodbye!|I am ten.
+b|Be quiet and listen.|Сиди тихо и слушай.|Тыныш отыр да тыңда.
+c|OK, I listen.|Хорошо, я слушаю.|Жақсы, мен тыңдап отырмын.|No, I run.|Good evening.`);
+D(7,`b|Who is this?|Кто это?|Бұл кім?
+c|This is my mother.|Это моя мама.|Бұл менің анам.|This is a pen.|I am ten.
+b|Do you have a brother?|У тебя есть брат?|Сенің ағаң бар ма?
+c|Yes, I do.|Да, есть.|Иә, бар.|It is sunny.|I like pizza.`);
+D(8,`b|Is your friend kind?|Твой друг добрый?|Досың мейірімді ме?
+c|Yes, he is kind.|Да, он добрый.|Иә, ол мейірімді.|Yes, it is red.|I am ten.
+b|Is he lazy?|Он ленивый?|Ол жалқау ма?
+c|No, he is hard-working.|Нет, он трудолюбивый.|Жоқ, ол еңбекқор.|Yes, it is blue.|Good morning!`);
+D(9,`b|What colour is her hair?|Какого цвета её волосы?|Оның шашы қандай түсті?
+c|She has dark hair.|У неё тёмные волосы.|Оның шашы қара.|She has blue eyes.|I have a pen.
+b|Does she have glasses?|У неё есть очки?|Оның көзілдірігі бар ма?
+c|Yes, she does.|Да, есть.|Иә, бар.|It is sunny.|Goodbye!`);
+D(10,`b|What is the weather today?|Какая сегодня погода?|Бүгін ауа райы қандай?
+c|It is sunny.|Солнечно.|Күн ашық.|I have a coat.|My name is Aida.
+b|Is it cold?|Холодно?|Суық па?
+c|No, it is hot.|Нет, жарко.|Жоқ, ыстық.|Yes, I am ten.|Goodbye!`);
+D(11,`b|It is cold! What do you wear?|Холодно! Что ты наденешь?|Суық! Сен не киесің?
+c|I wear a coat.|Я надену пальто.|Мен пальто киемін.|I wear shorts.|I wear sandals.
+b|And on your hands?|А на руки?|Ал қолыңа ше?
+c|I wear gloves.|Я надену перчатки.|Мен қолғап киемін.|I wear socks.|I wear a skirt.`);
+D(12,`b|Can you swim?|Ты умеешь плавать?|Сен жүзе аласың ба?
+c|Yes, I can.|Да, умею.|Иә, аламын.|Yes, I am.|It is blue.
+b|What can you do?|Что ты умеешь?|Сен не істей аласың?
+c|I can dance.|Я умею танцевать.|Мен билей аламын.|I am ten.|It is dance.`);
+D(13,`b|What toy do you have?|Какая у тебя игрушка?|Сенде қандай ойыншық бар?
+c|I have a robot.|У меня есть робот.|Менде робот бар.|I am a robot.|It is sunny.
+b|Do you like your robot?|Тебе нравится твой робот?|Саған роботың ұнай ма?
+c|Yes, I do.|Да, нравится.|Иә, ұнайды.|Yes, it is.|Goodbye!`);
+D(14,`b|Touch your head!|Коснись головы!|Басыңа қолыңды тигіз!
+c|This is my head.|Это моя голова.|Бұл менің басым.|This is my foot.|This is my nose.
+b|Clap your hands!|Хлопни в ладоши!|Қол шапалақта!
+c|Clap, clap, clap!|Хлоп, хлоп, хлоп!|Шап, шап, шап!|Sit down!|Goodbye!`);
+D(15,`b|Do you like apples?|Тебе нравятся яблоки?|Саған алма ұнай ма?
+c|Yes, I do.|Да, нравятся.|Иә, ұнайды.|Yes, I am.|It is red.
+b|Which vegetable is orange?|Какой овощ оранжевый?|Қандай көкөніс қызғылт сары?
+c|A carrot.|Морковь.|Сәбіз.|A banana.|A tomato.`);
+D(16,`b|Is pizza healthy?|Пицца полезная?|Пицца пайдалы ма?
+c|No, it is not healthy.|Нет, она не полезная.|Жоқ, ол пайдалы емес.|Yes, it is healthy.|It is blue.
+b|What do you like?|Что ты любишь?|Саған не ұнайды?
+c|I like cake.|Мне нравится торт.|Маған торт ұнайды.|I am cake.|Goodbye!`);
+D(17,`b|What do you drink in the morning?|Что ты пьёшь утром?|Сен таңертең не ішесің?
+c|I drink milk.|Я пью молоко.|Мен сүт ішемін.|I eat milk.|It is sunny.
+b|Do you like tea?|Тебе нравится чай?|Саған шай ұнай ма?
+c|No, I like juice.|Нет, мне нравится сок.|Жоқ, маған шырын ұнайды.|Yes, I am tea.|Good morning!`);
+D(18,`b|Where do you live?|Где ты живёшь?|Сен қайда тұрасың?
+c|I live in a house.|Я живу в доме.|Мен үйде тұрамын.|I am a house.|It is red.
+b|Do you have a garden?|У тебя есть сад?|Сенде бақ бар ма?
+c|Yes, I do.|Да, есть.|Иә, бар.|It is sunny.|Goodbye!`);
+D(19,`b|What is in your room?|Что в твоей комнате?|Сенің бөлмеңде не бар?
+c|I have a bed and a lamp.|У меня есть кровать и лампа.|Менде төсек пен шам бар.|I am a bed.|It is hot.
+b|Do you have a TV?|У тебя есть телевизор?|Сенде теледидар бар ма?
+c|No, I have a clock.|Нет, у меня часы.|Жоқ, менде сағат бар.|Yes, I am.|Goodbye!`);
+D(20,`b|Where do you go?|Куда ты идёшь?|Сен қайда барасың?
+c|I go to the park.|Я иду в парк.|Мен саябаққа барамын.|I am a park.|It is red.
+b|Do you like the library?|Тебе нравится библиотека?|Саған кітапхана ұнай ма?
+c|Yes, I do.|Да, нравится.|Иә, ұнайды.|Yes, I can.|Good evening.`);
+D(21,`b|Let’s go to the beach! What do you take?|Идём на пляж! Что ты возьмёшь?|Жағажайға барайық! Сен не аласың?
+c|I take a towel.|Я возьму полотенце.|Мен сүлгі аламын.|I take a coat.|I take a scarf.
+b|Is the sea blue?|Море синее?|Теңіз көк пе?
+c|Yes, it is.|Да, синее.|Иә, көк.|Yes, I do.|No, I can.`);
+D(22,`b|How do you go to school?|Как ты ходишь в школу?|Сен мектепке қалай барасың?
+c|I go by bus.|Я езжу на автобусе.|Мен автобуспен барамын.|I go by pen.|I am a bus.
+b|Do you like trains?|Тебе нравятся поезда?|Саған пойыздар ұнай ма?
+c|Yes, I do.|Да, нравятся.|Иә, ұнайды.|Yes, I am.|Goodbye!`);
+
+/* ===== ПРАВКИ: новые и заменённые рисунки (человечки, предметы). Рисунок важнее эмодзи ===== */
+const SKN="#f3c9a0";
+// голова с ушами; FT — глаза, нос, улыбка, щёки; SD — шея и плечи
+const FC=(cy=46)=>`<ellipse cx="28" cy="${cy+3}" rx="4" ry="6" fill="${SKN}" stroke="#0003"/><ellipse cx="72" cy="${cy+3}" rx="4" ry="6" fill="${SKN}" stroke="#0003"/><ellipse cx="50" cy="${cy}" rx="21" ry="25" fill="${SKN}" stroke="#0003"/>`;
+const FT=y=>EYES(40,y,20,3.2)+`<path d="M50 ${y+5}q-3 4 0 5" stroke="#d99a6c" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M43 ${y+13}q7 6 14 0" stroke="#c0392b" stroke-width="2.4" fill="none" stroke-linecap="round"/><circle cx="35" cy="${y+9}" r="3.4" fill="#ffb3c1" opacity=".7"/><circle cx="65" cy="${y+9}" r="3.4" fill="#ffb3c1" opacity=".7"/>`;
+const SD=c=>`<rect x="44" y="64" width="12" height="16" fill="${SKN}" stroke="#0003"/><path d="M16 100q0-20 34-20t34 20z" fill="${c}" stroke="#0003"/>`;
+const CAP=c=>`<path d="M26 56C20 8 80 8 74 56C70 38 62 30 50 30C38 30 30 38 26 56z" fill="${c}" stroke="#0003"/>`;
+Object.assign(ART,{
+"Pink":["#fff0f6",`<rect x="18" y="14" width="64" height="72" rx="6" fill="#fff" stroke="#0003"/><rect x="24" y="20" width="52" height="46" rx="3" fill="#ff7eb6"/><path d="M24 72h36M24 78h22" stroke="#ccc" stroke-width="3" stroke-linecap="round"/>`],
+"Sharpener":["#e0f2fe",`<path d="M14 46l14-12h56l-14 12z" fill="#93c5fd" stroke="#0003"/><rect x="14" y="46" width="56" height="32" rx="3" fill="#3b82f6" stroke="#0003"/><path d="M70 46l14-12v30l-14 14z" fill="#1d4ed8" stroke="#0003"/><ellipse cx="34" cy="62" rx="10" ry="9" fill="#0f172a"/><rect x="50" y="53" width="14" height="19" fill="#e5e7eb" stroke="#667"/><circle cx="57" cy="58" r="1.8" fill="#667"/><circle cx="57" cy="68" r="1.8" fill="#667"/><path d="M20 90q8-8 16 0t16 0" stroke="#e3b878" stroke-width="4" fill="none" stroke-linecap="round"/>`],
+"Rubber":["#ffe4f1",`<path d="M14 46l10-12h62l-10 12z" fill="#ffe4ea" stroke="#0003"/><rect x="14" y="46" width="62" height="30" fill="#ff8fa3" stroke="#0003"/><rect x="30" y="46" width="30" height="30" fill="#2563eb"/><rect x="30" y="56" width="30" height="8" fill="#fff"/><path d="M76 46l10-12v30l-10 12z" fill="#e0627a" stroke="#0003"/><circle cx="22" cy="86" r="2" fill="#bbb"/><circle cx="34" cy="90" r="2.5" fill="#bbb"/>`],
+"Desk":["#fff3d1",`<path d="M12 40l16-12h56l-16 12z" fill="#e8bd7d" stroke="#0003"/><rect x="12" y="40" width="56" height="8" fill="#c98a4b" stroke="#0003"/><path d="M68 40l16-12v8l-16 12z" fill="#a8703d" stroke="#0003"/><rect x="16" y="48" width="5" height="36" fill="#64748b"/><rect x="58" y="48" width="5" height="36" fill="#64748b"/><rect x="16" y="64" width="47" height="5" fill="#c98a4b" stroke="#0003"/><rect x="30" y="22" width="22" height="7" fill="#e63946" stroke="#0003"/><rect x="56" y="28" width="16" height="3" fill="#facc15" transform="rotate(-10 56 28)"/>`],
+"Pencil case":["#ede7ff",`<g stroke="#0003"><rect x="24" y="18" width="8" height="26" fill="#ef4444" transform="rotate(-12 28 42)"/><rect x="40" y="14" width="8" height="30" fill="#22c55e"/><rect x="56" y="18" width="8" height="26" fill="#facc15" transform="rotate(12 60 42)"/></g><rect x="10" y="40" width="80" height="36" rx="16" fill="#8b5cf6" stroke="#0003"/><path d="M20 58h58" stroke="#fff" stroke-width="2.5" stroke-dasharray="3 3"/><rect x="72" y="49" width="9" height="16" rx="3" fill="#fde047" stroke="#0003"/><circle cx="26" cy="68" r="3" fill="#fde68a"/><circle cx="38" cy="48" r="3" fill="#fde68a"/>`],
+"Beautiful":["#ffe4f1",`<path d="M18 100V38C18 6 82 6 82 38V100q-4-6-9 0q-4 6-9 0H36q-4-6-9 0q-4 6-9 0z" fill="#f6c453" stroke="#0003"/><rect x="44" y="64" width="12" height="16" fill="${SKN}"/><path d="M28 100q0-18 22-18t22 18z" fill="#e879f9"/>${FC(46)}<path d="M28 46C30 18 70 18 72 46C62 34 42 30 28 46z" fill="#f6c453" stroke="#0003"/>${FT(48)}<path d="M34 24l5-10 6 8 5-12 5 12 6-8 5 10z" fill="#fbbf24" stroke="#b45309"/><path d="M12 28l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#fde047"/><path d="M80 14l2.5 6 6 2.5-6 2.5-2.5 6-2.5-6-6-2.5 6-2.5z" fill="#fde047"/>`],
+"Dirty":["#f1f5f9",`<path d="M32 22l-18 14 8 12 8-6v38h40V42l8 6 8-12-18-14q-8 8-18 8t-18-8z" fill="#cbd5e1" stroke="#0003"/><ellipse cx="42" cy="52" rx="9" ry="6" fill="#7a5230"/><ellipse cx="60" cy="68" rx="11" ry="7" fill="#7a5230"/><ellipse cx="28" cy="40" rx="5" ry="3.5" fill="#7a5230"/><ellipse cx="72" cy="42" rx="5" ry="4" fill="#7a5230"/><circle cx="50" cy="78" r="3" fill="#7a5230"/><circle cx="36" cy="70" r="2.5" fill="#7a5230"/><circle cx="66" cy="54" r="2" fill="#7a5230"/><path d="M14 14q-6 6 0 12M86 14q6 6 0 12" stroke="#8aa" stroke-width="2.5" fill="none" stroke-linecap="round"/>`],
+"Daughter":["#fff3d1",`<ellipse cx="20" cy="58" rx="9" ry="17" fill="#8a3b12"/><ellipse cx="80" cy="58" rx="9" ry="17" fill="#8a3b12"/>${SD("#e0527a")}${FC(46)}<path d="M27 46C24 12 76 12 73 46C66 32 58 28 50 28C42 28 34 32 27 46z" fill="#8a3b12" stroke="#0003"/><circle cx="22" cy="42" r="4" fill="#e63946"/><circle cx="78" cy="42" r="4" fill="#e63946"/>${FT(48)}`],
+"Dark hair":["#e0f2fe",`${SD("#60a5fa")}${FC(46)}${CAP("#1f1f24")}${FT(48)}`],
+"Fair hair":["#e0f2fe",`${SD("#60a5fa")}${FC(46)}${CAP("#f6d365")}${FT(48)}`],
+"Curly hair":["#e0f2fe",`<g fill="#6b3e1c" stroke="#0003"><circle cx="24" cy="46" r="10"/><circle cx="26" cy="30" r="10"/><circle cx="38" cy="20" r="10"/><circle cx="54" cy="18" r="10"/><circle cx="68" cy="22" r="10"/><circle cx="77" cy="34" r="10"/><circle cx="77" cy="50" r="9"/></g>${SD("#34d399")}${FC(48)}<g fill="#6b3e1c" stroke="#0003"><circle cx="36" cy="33" r="8"/><circle cx="47" cy="30" r="8"/><circle cx="58" cy="30" r="8"/><circle cx="67" cy="35" r="7"/></g>${FT(50)}`],
+"Straight hair":["#e0f2fe",`<path d="M20 70V36C20 6 80 6 80 36V70z" fill="#2b2b33" stroke="#0003"/>${SD("#f472b6")}${FC(46)}<path d="M29 44C30 22 70 22 71 44z" fill="#2b2b33" stroke="#0003"/>${FT(50)}`],
+"Long hair":["#e0f2fe",`<path d="M18 100V38C18 6 82 6 82 38V100q-4-6-9 0q-4 6-9 0H36q-4-6-9 0q-4 6-9 0z" fill="#b45309" stroke="#0003"/><rect x="44" y="64" width="12" height="16" fill="${SKN}"/><path d="M30 100q0-18 20-18t20 18z" fill="#a78bfa"/>${FC(46)}<path d="M28 46C30 18 70 18 72 46C62 34 42 30 28 46z" fill="#b45309" stroke="#0003"/>${FT(48)}`],
+"Short hair":["#e0f2fe",`${SD("#fb923c")}${FC(46)}<path d="M29 44C27 12 73 12 71 44C65 32 58 28 50 28C42 28 35 32 29 44z" fill="#8a5a33" stroke="#0003"/>${FT(48)}`],
+"Ponytail":["#e0f2fe",`<path d="M68 24C96 22 98 62 80 82C80 62 76 48 66 40z" fill="#8a3b12" stroke="#0003"/>${SD("#f472b6")}${FC(46)}<path d="M28 44C26 14 74 14 72 44C64 30 56 26 50 26C44 26 36 30 28 44z" fill="#8a3b12" stroke="#0003"/><circle cx="70" cy="28" r="4.5" fill="#e63946"/>${FT(48)}`],
+"Brown eyes":["#fff3d1",`<rect x="6" y="30" width="88" height="42" rx="21" fill="${SKN}" stroke="#0003"/><path d="M14 52q17-18 34 0q-17 14-34 0zM52 52q17-18 34 0q-17 14-34 0z" fill="#fff" stroke="#5b3a1a" stroke-width="2"/><circle cx="31" cy="51" r="9" fill="#6b3e1c"/><circle cx="69" cy="51" r="9" fill="#6b3e1c"/><circle cx="31" cy="51" r="4" fill="#111"/><circle cx="69" cy="51" r="4" fill="#111"/><circle cx="34" cy="47" r="2.4" fill="#fff"/><circle cx="72" cy="47" r="2.4" fill="#fff"/><path d="M14 38q17-11 34-2M52 36q17-9 34 2" stroke="#4b2e1a" stroke-width="4" fill="none" stroke-linecap="round"/>`],
+"Moustache":["#ede7ff",`${SD("#475569")}${FC(46)}<path d="M28 44C26 14 74 14 72 44C64 30 56 28 50 28C44 28 36 30 28 44z" fill="#1f1f24" stroke="#0003"/>${EYES(40,45,20,3.2)}<path d="M50 49q-4 6 0 7" stroke="#d99a6c" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M50 62C44 55 32 55 27 65C34 68 44 66 50 64C56 66 66 68 73 65C68 55 56 55 50 62z" fill="#4b2e1a" stroke="#0003"/><path d="M44 71q6 4 12 0" stroke="#c0392b" stroke-width="2.4" fill="none" stroke-linecap="round"/>`],
+"Face":["#e0f7fa",`${SD("#f59e0b")}${FC(46)}<path d="M27 46C24 12 76 12 73 46C66 32 58 28 50 28C42 28 34 32 27 46z" fill="#6b3e1c" stroke="#0003"/><path d="M34 40q6-4 12-1M54 39q6-3 12 1" stroke="#4b2e1a" stroke-width="2.5" fill="none" stroke-linecap="round"/>${FT(48)}`],
+"Sweater":["#fff3d1",`<path d="M30 26h40l18 12 6 30-14 3-4-14v32H28V57l-4 14-14-3 6-30z" fill="#e0527a" stroke="#0003"/><ellipse cx="50" cy="26" rx="11" ry="5" fill="#fbcfe8" stroke="#0003"/><path d="M28 48h44M28 60h44" stroke="#fde047" stroke-width="6"/><rect x="28" y="82" width="44" height="7" fill="#a31d52"/><rect x="10" y="64" width="14" height="6" fill="#a31d52" transform="rotate(14 17 67)"/><rect x="76" y="64" width="14" height="6" fill="#a31d52" transform="rotate(-14 83 67)"/>`],
+"Sandals":["#fff3d1",`<g stroke="#0003"><path d="M16 26q10-14 22-6q7 16-1 58q-8 10-18 4q-6-10-3-56z" fill="#c98a4b"/><path d="M18 36q11-6 19 2M17 52q11-6 19 0" stroke="#e63946" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M54 26q10-14 22-6q7 16-1 58q-8 10-18 4q-6-10-3-56z" fill="#c98a4b"/><path d="M56 36q11-6 19 2M55 52q11-6 19 0" stroke="#e63946" stroke-width="6" fill="none" stroke-linecap="round"/></g>`],
+"Pyjamas":["#e0ecff",`<path d="M30 10h40l14 12-6 12-8-4v20H30V30l-8 4-6-12z" fill="#60a5fa" stroke="#0003"/><path d="M32 58h36l4 34H54l-4-20-4 20H28z" fill="#60a5fa" stroke="#0003"/><rect x="32" y="52" width="36" height="7" fill="#2563eb"/><circle cx="50" cy="22" r="2" fill="#fff"/><circle cx="50" cy="34" r="2" fill="#fff"/><circle cx="50" cy="46" r="2" fill="#fff"/><g fill="#fde047"><circle cx="38" cy="26" r="3"/><circle cx="62" cy="38" r="3"/><circle cx="40" cy="42" r="2.5"/><circle cx="38" cy="72" r="3"/><circle cx="62" cy="80" r="3"/><circle cx="60" cy="66" r="2.5"/></g>`],
+"Doll":["#ffe4f1",`<circle cx="50" cy="24" r="15" fill="${SKN}" stroke="#0003"/><path d="M34 26C32 6 68 6 66 26C60 16 40 16 34 26z" fill="#f6c453" stroke="#0003"/><circle cx="36" cy="10" r="5" fill="#e63946"/><circle cx="64" cy="10" r="5" fill="#e63946"/>${EYES(44,26,12,2.3)}<path d="M45 33q5 4 10 0" stroke="#c0392b" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M26 44l12-4M74 44l-12-4" stroke="${SKN}" stroke-width="6" stroke-linecap="round"/><path d="M38 38h24l14 40H24z" fill="#f472b6" stroke="#0003"/><path d="M24 78q6 5 13 0t13 0 13 0 13 0" stroke="#fff" stroke-width="3" fill="none"/><rect x="40" y="78" width="7" height="11" fill="${SKN}"/><rect x="53" y="78" width="7" height="11" fill="${SKN}"/><ellipse cx="43" cy="91" rx="7" ry="3.5" fill="#e63946"/><ellipse cx="57" cy="91" rx="7" ry="3.5" fill="#e63946"/>`],
+"Head":["#e3f4d4",`${SD("#60a5fa")}${FC(46)}<path d="M27 44L30 20L38 30L44 13L52 28L60 13L64 30L72 20L73 44C66 34 58 32 50 32C42 32 34 34 27 44z" fill="#5b3a1a" stroke="#0003"/>${FT(48)}`],
+"Tummy":["#ffe8d6",`<circle cx="50" cy="20" r="13" fill="${SKN}" stroke="#0003"/><path d="M36 18C36 4 64 4 64 18C58 12 42 12 36 18z" fill="#8a5a33"/>${EYES(45,20,10,2)}<path d="M46 26q4 3 8 0" stroke="#c0392b" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M28 38q22-8 44 0l4 38H24z" fill="#fde047" stroke="#0003"/><path d="M26 76h48l2 14H24z" fill="#3b82f6" stroke="#0003"/><path d="M28 42q-12 16 8 28M72 42q12 16-8 28" stroke="${SKN}" stroke-width="9" fill="none" stroke-linecap="round"/><circle cx="41" cy="64" r="5.5" fill="${SKN}" stroke="#0003"/><circle cx="59" cy="64" r="5.5" fill="${SKN}" stroke="#0003"/><circle cx="50" cy="60" r="17" fill="none" stroke="#e63946" stroke-width="3" stroke-dasharray="4 3"/>`],
+"Back":["#e0ecff",`<rect x="44" y="30" width="12" height="14" fill="${SKN}"/><circle cx="50" cy="22" r="15" fill="#8a5a33" stroke="#0003"/><ellipse cx="35" cy="25" rx="3" ry="5" fill="${SKN}"/><ellipse cx="65" cy="25" rx="3" ry="5" fill="${SKN}"/><rect x="14" y="46" width="12" height="36" rx="6" fill="${SKN}" stroke="#0003"/><rect x="74" y="46" width="12" height="36" rx="6" fill="${SKN}" stroke="#0003"/><path d="M26 44q24-8 48 0l2 44H24z" fill="#60a5fa" stroke="#0003"/><path d="M50 46v40" stroke="#2563eb" stroke-width="2" stroke-dasharray="3 3"/><ellipse cx="50" cy="64" rx="15" ry="17" fill="none" stroke="#e63946" stroke-width="3" stroke-dasharray="4 3"/>`],
+"Hop on one leg":["#e3f4d4",`<path d="M8 92h84" stroke="#8a5a33" stroke-width="3" stroke-linecap="round"/><circle cx="48" cy="18" r="11" fill="${SKN}" stroke="#0003"/><path d="M38 16C38 4 58 4 58 16C54 11 42 11 38 16z" fill="#5b3a1a"/>${EYES(44,19,8,1.8)}<path d="M45 24q3 2 6 0" stroke="#c0392b" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M38 32h20l2 26H36z" fill="#fff" stroke="#0003"/><path d="M42 32l6 8 6-8" fill="#1e3a8a"/><path d="M40 34L18 42M58 34L80 42" stroke="${SKN}" stroke-width="6" stroke-linecap="round"/><path d="M44 58v28" stroke="#1e3a8a" stroke-width="9" stroke-linecap="round"/><path d="M54 58l18 10-4 14" stroke="#1e3a8a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/><ellipse cx="44" cy="89" rx="8" ry="3.5" fill="#333"/><ellipse cx="68" cy="85" rx="3.5" ry="7" fill="#333" transform="rotate(10 68 85)"/>`],
+"Turn your head":["#ede7ff",`<path d="M20 100q0-20 30-20t30 20z" fill="#60a5fa" stroke="#0003"/><rect x="44" y="64" width="12" height="16" fill="${SKN}" stroke="#0003"/><circle cx="50" cy="44" r="20" fill="${SKN}" stroke="#0003"/><path d="M69 42l9 6-9 4z" fill="${SKN}" stroke="#0003"/><path d="M30 40C28 16 68 14 70 38C60 30 42 30 30 40z" fill="#5b3a1a" stroke="#0003"/><ellipse cx="45" cy="48" rx="3.5" ry="5.5" fill="#e8b88a" stroke="#0003"/><circle cx="62" cy="42" r="2.8" fill="#222"/><path d="M60 54q4 3 8 0" stroke="#c0392b" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M22 22q28-22 56 0" stroke="#e63946" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M80 24l-10-2 6 9z" fill="#e63946"/>`],
+"Pumpkin":["#fff3d1",`<ellipse cx="50" cy="60" rx="35" ry="28" fill="#f97316" stroke="#0003"/><ellipse cx="31" cy="60" rx="13" ry="27" fill="#fb923c"/><ellipse cx="69" cy="60" rx="13" ry="27" fill="#fb923c"/><path d="M50 33v54M40 34q-8 26 0 52M60 34q8 26 0 52" stroke="#c2410c" stroke-width="2.5" fill="none"/><path d="M46 34q0-12 7-16l4 3q-5 4-3 13z" fill="#4d7c0f" stroke="#0003"/><path d="M58 28q10-10 18-2q-8 2-12 8z" fill="#65a30d"/>`],
+"Chips":["#fff3d1",`<path d="M22 12h56l-4 8 4 8-4 8 4 8-4 8 4 8-4 8 4 8-4 6H22l4-6-4-8 4-8-4-8 4-8-4-8 4-8-4-8z" fill="#ef4444" stroke="#0003"/><ellipse cx="50" cy="48" rx="21" ry="18" fill="#facc15" stroke="#0003"/><circle cx="50" cy="48" r="11" fill="#f59e0b" stroke="#b45309"/><path d="M44 46q6-4 12 0M45 52q5 3 10 0" stroke="#b45309" stroke-width="1.6" fill="none"/><ellipse cx="80" cy="86" rx="11" ry="6" fill="#fbbf24" stroke="#b45309" transform="rotate(-12 80 86)"/><ellipse cx="62" cy="92" rx="8" ry="5" fill="#fbbf24" stroke="#b45309"/>`],
+"Mineral water":["#e0f7fa",`<rect x="40" y="8" width="20" height="11" rx="3" fill="#2563eb" stroke="#0003"/><path d="M42 19h16v9q11 6 11 18v40q0 6-6 6H37q-6 0-6-6V46q0-12 11-18z" fill="#bfe7ff" stroke="#0003"/><rect x="31" y="50" width="38" height="24" fill="#2563eb"/><path d="M50 54q-6 8 0 12 6-4 0-12z" fill="#fff"/><path d="M36 38q0 6 2 10" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M33 80h34" stroke="#7dd3fc" stroke-width="3"/>`],
+"Pillow":["#e0ecff",`<path d="M8 28Q50 12 92 28Q82 50 92 72Q50 88 8 72Q18 50 8 28Z" fill="#fff7ed" stroke="#fb923c" stroke-width="2.5" stroke-linejoin="round"/><path d="M22 36Q50 26 78 36" stroke="#fed7aa" stroke-width="5" fill="none" stroke-linecap="round"/><g fill="#fdba74"><circle cx="34" cy="50" r="2.5"/><circle cx="50" cy="46" r="2.5"/><circle cx="66" cy="50" r="2.5"/><circle cx="42" cy="60" r="2.5"/><circle cx="58" cy="60" r="2.5"/></g>`],
+"Bakery":["#fff3d1",`<circle cx="50" cy="54" r="34" fill="#d9a066" stroke="#0003"/><path d="M50 54a6 6 0 0 1 6-6a12 12 0 0 1 12 12a18 18 0 0 1-18 18a24 24 0 0 1-24-24a28 28 0 0 1 28-28" fill="none" stroke="#8a5a33" stroke-width="5" stroke-linecap="round"/><path d="M24 44q10-8 20 0t20 0t12 8" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M30 70q10 6 20 0t18-2" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>`]
+});
+
+// переключение темы: текущие слова/фразы возвращаются в U, прогресс по теме (тесты, звёзды) хранится отдельно
+function useU(id,boot){if(!boot){const o=U[S.unit];o.words=W.slice();o.phr=P.slice();o.dlg=DLG.slice()}
+ S.U[S.unit]={pre:S.pre,post:S.post,stars:S.stars};const n=U[id],p=S.U[id]||{pre:null,post:null,stars:{}};
+ S.unit=id;S.pre=p.pre;S.post=p.post;S.stars=p.stars;
+ W.splice(0,W.length,...n.words);P.splice(0,P.length,...n.phr);DLG.splice(0,DLG.length,...n.dlg);TOPIC=n.n;CN=n.cn;
+ for(const k in CAT)delete CAT[k];W.forEach(x=>{if(x.c)CAT[x.en]=x.c})}
+function pickU(id){useU(id);save();show(goUnit)}
+// ГЛАВНАЯ: меню тем (клик по теме открывает её раздел со словарём, карточками, заданиями и играми)
+function goHome(){paint(`<h1>🎓 ${t("pt")}</h1>${say2(t("hi2"))}<div class="grid">${UL.map(id=>{const u=U[id];
+ if(u.soon)return `<button class="tile" disabled style="background:${u.col}"><i>${u.e}</i>${u.n[S.lang]}<small>🔒 ${t("soon")}</small></button>`;
+ const ws=id==S.unit?W:u.words;return `<button class="tile" style="background:${u.col}" onclick="pickU('${id}')"><i>${u.e}</i>${u.n[S.lang]}<small>📚 ${ws.filter(x=>(S.box[x.en]||{b:0}).b>=3).length}/${ws.length}</small></button>`}).join("")}</div>`)}
+
+/* ===== ЗАПУСК ===== */
+try{speechSynthesis.onvoiceschanged=()=>{if(cur)cur()}}catch(e){}
+load();useU(U[S.unit]&&!U[S.unit].soon?S.unit:"animals",1);apply();hdr();show(goHome);
+/* ===== РЕЖИМ УЧИТЕЛЯ и ИГРЫ — будут добавлены на следующих этапах ===== */
+</script></body></html>
